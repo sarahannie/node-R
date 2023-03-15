@@ -3,6 +3,7 @@ const app = express();
 const Port = 3000;
 const path = require('path');
 const router = express.Router();
+app.use(router);
 
 // app.get('/', (req, res) => {
 //     res.send("Homepage! helloworld")
@@ -20,8 +21,14 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req,res) => {
-    res.sendFile(path.join(__dirname + '/about.html' ))
+    res.sendFile(path.join(__dirname, 'about.html' ))
 })
+
+
+router.get('/all', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+  });
+
 
 
 
