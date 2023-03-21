@@ -1,0 +1,39 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title U-Farm
+  link(rel='stylesheet' href='../css/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.8/css/all.css')
+  link(rel='stylesheet' href='../css/sigin.css')
+  link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet')
+  script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+.bg1
+  .bg2
+    article.card-body.mx-auto(style='max-width: 400px;')
+      h4.card-title.mt-3.text-center Sign In
+      p.text-center Let Make Shopping Easier
+      form#regform(action='#' name='register' onsubmit='return validation()' method='POST')
+        .form-group.input-group
+          .input-group-prepend
+            span.input-group-text
+              i.fa.fa-envelope
+          input#email.form-control(name='' placeholder='Email address' type='email')
+          small#emailErr
+        .form-group.input-group
+          .input-group-prepend
+            span.input-group-text
+              i.fa.fa-lock
+          input#password.form-control(placeholder='Create password' type='password')
+          small#passwordErr
+        // form-group//
+        .form-group
+          button.btn.btn-color.btn-block(type='submit')  Create Account  
+        // form-group//
+        p.text-center
+          | Doesn&apos;t Have an account? 
+          a.login(href='../page/signUp.html') Register
+script(src='../js/sigin.js')
+script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+script(src='../css/bootstrap/js/bootstrap.js')

@@ -1,0 +1,99 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  style 
+    include ../../public/css/payment.css
+    include ../../public/css/bootstrap/css/bootstrap.css
+    include ../../public/css/bootstrap/css/bootstrap.min.css
+    include ../../public/css/bootstrap/css/bootstrap-grid.css
+ 
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.2/css/all.css')
+  title U-Farm
+.container.d-md-flex.align-items-center
+  .card.box1.shadow-sm.p-md-5.p-md-5.p-4
+    .fw-bolder.mb-4
+      span.fas.fa-dollar-sign
+      span.ps-1 599,00
+    .d-flex.flex-column
+      .d-flex.align-items-center.justify-content-between.text
+        span Commission
+        span.fas.fa-dollar-sign
+          span.ps-1 1.99
+      .d-flex.align-items-center.justify-content-between.text.mb-4
+        span Total
+        span.fas.fa-dollar-sign
+          span.ps-1 600.99
+      .border-bottom.mb-4
+      .d-flex.flex-column.mb-4
+        span.far.fa-file-alt.text
+          span.ps-2 Invoice ID:
+        span.ps-3 SN8478042099
+      .d-flex.flex-column.mb-5
+        span.far.fa-calendar-alt.text
+          span.ps-2 Next payment:
+        span.ps-3 22 march,2023
+      .d-flex.align-items-center.justify-content-between.text.mt-5
+        .d-flex.flex-column.text
+          span Customer Support:
+          span online chat 24/7
+        .btn.btn-primary.rounded-circle
+          span.fas.fa-comment-alt
+  .card.box2.shadow-sm
+    .d-flex.align-items-center.justify-content-between.p-md-5.p-4
+      span.h5.fw-bold.m-0 Payment methods
+      .btn.btn-primary.bar
+        span.fas.fa-bars
+    ul.nav.nav-tabs.mb-3.px-md-4.px-2
+      li.nav-item
+        a.nav-link.px-2.active(aria-current='page' href='#') Credit Card
+      li.nav-item
+        a.nav-link.px-2(href='#') Mobile Payment
+      li.nav-item.ms-auto
+        a.nav-link.px-2(href='#') + More
+    .px-md-5.px-4.mb-4.d-flex.align-items-center
+      .btn.btn-success.me-4
+        span.fas.fa-plus
+      .btn-group(role='group' aria-label='Basic radio toggle button group')
+        input#btnradio1.btn-check(type='radio' name='btnradio' autocomplete='off' checked='')
+        label.btn.btn-outline-primary(for='btnradio1')
+          span.pe-1 +
+          | 5949
+        input#btnradio2.btn-check(type='radio' name='btnradio' autocomplete='off')
+        label.btn.btn-outline-primary(for='btnradio2')
+          span.lpe-1 +
+          | 3894
+    form(action='')
+      .row
+        .col-12
+          .d-flex.flex-column.px-md-5.px-4.mb-4
+            span Credit Card
+            .inputWithIcon
+              input.form-control(type='text' value='5136 1845 5468 3894')
+              span
+                img(src='https://www.freepnglogos.com/uploads/mastercard-png/mastercard-logo-logok-15.png' alt='')
+        .col-md-6
+          .d-flex.flex-column.ps-md-5.px-md-0.px-4.mb-4
+            span
+              | Expiration
+              span.ps-1 Date
+            .inputWithIcon
+              input.form-control(type='text' value='05/20')
+              span.fas.fa-calendar-alt
+        .col-md-6
+          .d-flex.flex-column.pe-md-5.px-md-0.px-4.mb-4
+            span Code CVV
+            .inputWithIcon
+              input.form-control(type='password' value='123')
+              span.fas.fa-lock
+        .col-12
+          .d-flex.flex-column.px-md-5.px-4.mb-4
+            span Name
+            .inputWithIcon
+              input.form-control.text-uppercase(type='text' value='valdimir berezovkiy')
+              span.far.fa-user
+        .col-12.px-md-5.px-4.mt-3
+          .btn.btn-primary.w-100 Pay $599.00
+script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+script(src='../css/bootstrap/js/bootstrap.js')

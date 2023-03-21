@@ -3,10 +3,11 @@ const path = require("path");
 const app = express();
 const router = express.Router();
 const Port = 3000;
-const employeeRoute = require("./routes/employeeRoute");
 const aboutRoute = require("./routes/aboutRoute");
+const cartRoute = require("./routes/cartRoute");
 const contactRoute = require("./routes/contactRoute");
-const cartRoute = require("./routes/cartRoute")
+const indexRoute = require("./routes/indexRoute")
+const paymentRoute = require("./routes/paymentRoute")
 
 
 app.set("view engine","pug");
@@ -17,9 +18,11 @@ app.set("views", path.join(__dirname,"views","page"))
 app.use(express.static("public"))
 
 app.use(cartRoute);
-app.use(employeeRoute);
 app.use(aboutRoute);
 app.use(contactRoute);
+app.use(indexRoute)
+app.use(paymentRoute)
+app.use(paymentRoute)
 
 
 app.listen(process.env.port || Port, ()=>{

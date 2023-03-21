@@ -1,0 +1,78 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title U-Farm
+  link(rel='stylesheet' href='../css/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.8/css/all.css')
+  link(rel='stylesheet' href='../css/signup-consumer.css')
+  link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet')
+  script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+.bg1
+  .bg2
+    article.card-body.mx-auto(style='max-width: 400px;')
+      h4.card-title.mt-3.text-center Create Account
+      p.text-center Let Make Shopping Easier
+      form#regform(action='#' name='register' onsubmit='return validation()' method='POST')
+        .form-group.input-group
+          .input-group-prepend
+            span.input-group-text
+              i.fa.fa-user
+          input#fullName.form-control(name='' placeholder='Full name' type='text')
+          small#fnameErr
+        // form-group//
+        .form-group.input-group
+          .input-group-prepend
+            span.input-group-text
+              i.fa.fa-envelope
+          input#email.form-control(name='' placeholder='Email address' type='email')
+          small#emailErr
+        // form-group//
+        .form-group.input-group
+          .input-group-prepend
+            span.input-group-text
+              i Gender
+          label.label2
+            input#gmale.gender(name='gender' type='radio' value='male')
+            span Male
+          label
+            input#gfemale.gender(name='gender' type='radio' value='female')
+            span Female
+            small#gfemaleErr
+        // form-group//
+        .form-group.input-group
+          .input-group-prepend
+            span.input-group-text
+              i.fa.fa-phone
+          select#country-code.custom-select(style='max-width: 120px;')
+            option(selected='') +256
+            option(value='1') +254
+            option(value='2') +255
+            option(value='3') +234
+          input#phoneInput.form-control(name='' placeholder='Phone number' type='text')
+          small#phonenumErr
+        // form-group//
+        .form-group.input-group
+          .input-group-prepend
+            span.input-group-text
+              i.fa.fa-lock
+          input#password.form-control(placeholder='Create password' type='password')
+          small#passwordErr
+        // form-group//
+        .form-group.input-group
+          .input-group-prepend
+            span.input-group-text
+              i.fa.fa-lock
+          input#repassword.form-control(placeholder='Repeat password' type='password')
+          small#repasswordErr
+        // form-group//
+        .form-group
+          button.btn.btn-color.btn-block(type='submit')  Create Account  
+        // form-group//
+        p.text-center
+          | Have an account? 
+          a.login(href='') Log In
+script(src='../js/signup-consumer.js')
+script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+script(src='../css/bootstrap/js/bootstrap.js')
