@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/src/css/AgricultureOffice/index.css" />
+    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <title>U-Farm</title>
+  </head>
+  <body id="body-pd">
+    <header class="header" id="header">
+      <div class="header_toggle">
+        <i class="bx bx-menu" id="header-toggle"></i>
+      </div>
+      <div class="header_img">
+        <img src="/src/images/img05.jpg" alt="" />
+      </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+      <nav class="nav">
+        <div>
+          <a href="#" class="nav_logo">
+            <img src="/src/images/icons8-r-100.png"  class="bx nav_logo-icon" >
+            <span class="nav_logo-name">U-Farm</span>
+          </a>
+          <div class="nav_list">
+            <a href="#" class="nav_link active">
+              <i class="bx bx-grid-alt nav_icon"></i>
+              <span class="nav_name">Dashboard</span>
+            </a>
+            <a href="#" class="nav_link "   href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class='bx bxs-registered nav_icon '></i>
+              <span class="nav_name dropdown-toggle">Register</span>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Register Admin</a>
+                <li><hr class="dropdown-divider"></li>
+                <a class="dropdown-item" href="#">Rgister FarmOne</a>
+              </div>
+            </a>
+
+            <a href="#" class="nav_link">
+              <i class='bx bxs-user-detail nav_icon'></i>
+              <span class="nav_name">Update</span>
+            </a>
+
+            <a href="#" class="nav_link">
+              <i class="bx bx-message-square-detail nav_icon"></i>
+              <span class="nav_name">Messages</span>
+            </a>
+
+            <a href="#" class="nav_link "   href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class='bx bxs-hard-hat nav_icon'></i>
+              <span class="nav_name dropdown-toggle">Registered</span>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Registered Admin</a>
+                <li><hr class="dropdown-divider"></li>
+                <a class="dropdown-item" href="#">Rgistered FarmOne</a>
+                <li><hr class="dropdown-divider"></li>
+                <a class="dropdown-item" href="#">Rgistered UrbanFarmers</a>
+                <li><hr class="dropdown-divider"></li>
+                <a class="dropdown-item" href="#">Rgistered User</a>
+              </div>
+            </a>
+
+            <a href="#" class="nav_link">
+              <i class='bx bx-accessibility nav_icon'></i>
+              <span class="nav_name">Sale</span>
+            </a>
+            <a href="#" class="nav_link">
+              <i class='bx bxs-lock-alt  nav_icon'></i>
+              <span class="nav_name">Auth</span>
+            </a>
+            <a href="#" class="nav_link">
+              <i class="bx bx-bar-chart-alt-2 nav_icon"></i>
+              <span class="nav_name">Update</span>
+            </a>
+
+            <a href="#" class="nav_link signout">
+              <i class="bx bx-log-out nav_icon"></i>
+              <span class="nav_name">SignOut</span>
+            </a>
+          </div>
+         
+        </div>
+      </nav>
+    </div>
+    <!--Container Main start-->
+    <div class="height-100 bg-light">
+
+      <div class="bg-cover">
+        <div class="container">
+          <div class="row">
+              <div class="col-xl-3 col-sm-6 col-12 marg">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="icon-pointer danger font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body text-right">
+                    <h3>423</h3>
+                    <span>Total Visits</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-sm-6 col-12 marg">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="icon-graph success font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body text-right">
+                    <h3>64.89 %</h3>
+                    <span>Total Daliy Sales</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-sm-6 col-12 marg">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-left">
+                    <h3 class="success">156</h3>
+                    <span>New Constomer </span>
+                  </div>
+                  <div class="align-self-center">
+                    <i class="icon-user success font-large-2 float-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-sm-6 col-12 marg">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-left">
+                    <h3 class="warning">123</h3>
+                    <span>Orders for the month</span>
+                  </div>
+                  <div class="align-self-center">
+                    <i class="icon-pie-chart warning font-large-2 float-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+        <!-- careating a chart -->
+        <div style="width: 800px;"><canvas id="acquisitions"></canvas></div>
+
+
+      
+
+
+        
+
+      </div>
+
+      
+      <h4>Main Components</h4>
+      <h1>https://codepen.io/lesliesamafful/pen/oNXgmBG</h1>
+    
+    <!--Container Main end-->
+  
+    <script src="/src/js/AgricultureOffice/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/src/css/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

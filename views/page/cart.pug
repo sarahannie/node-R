@@ -1,0 +1,91 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  
+  style 
+    include ../../public/css/cart.css
+    include ../../public/css/bootstrap/css/bootstrap.css
+    include ../../public/css/bootstrap/css/bootstrap.min.css
+    include ../../public/css/bootstrap/css/bootstrap-grid.css
+  
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  title U-Farm
+.card
+  .row
+    .col-md-8.cart
+      .title
+        .row
+          .col
+            h4
+              b Shopping Cart
+          .col.align-self-center.text-right.text-muted
+            | 3 items
+      .row.border-top.border-bottom
+        .row.main.align-items-center
+          .col-2
+            img.img-fluid(src='/images/African Maize.jpg')
+          .col
+            .row.text-muted Products
+            .row sweet Maize
+          .col
+            a(href='#') -
+            a.border(href='#') 1
+            a(href='#') +
+          .col
+            | &amp;dollar; 2.00 
+            span.close &#x2715;
+      .row
+        .row.main.align-items-center
+          .col-2
+            img.img-fluid(src='/images/brown-maize.jpg')
+          .col
+            .row.text-muted Products
+            .row African Maize
+          .col
+            a(href='#') -
+            a.border(href='#') 1
+            a(href='#') +
+          .col
+            | &amp;dollar; 5.00 
+            span.close &#x2715;
+      .row.border-top.border-bottom
+        .row.main.align-items-center
+          .col-2
+            img.img-fluid(src='/images/African Yam.jpg')
+          .col
+            .row.text-muted Products
+            .row Africa Yam
+          .col
+            a(href='#') -
+            a.border(href='#') 1
+            a(href='#') +
+          .col
+            | &amp;dollar; 4.00 
+            span.close &#x2715;
+      .back-to-shop
+        a(href='../page/service.html') &amp;leftarrow;
+        span.text-muted Back to shop
+    .col-md-4.summary
+      div
+        h5
+          b Summary
+      hr
+      .row
+        .col(style='padding-left: 20px') ITEMS 3
+        .col.text-right &amp;dollar; 11.00
+      form
+        p SHIPPING
+        select
+          option.text-muted
+            | Standard-Delivery- &amp;dollar;1.00
+        p GIVE CODE
+        input#code(placeholder='Enter your code')
+      .row(style='border-top: 1px solid rgba(0, 0, 0, 0.1); padding: 2vh 0')
+        .col TOTAL PRICE
+        .col.text-right &amp;dollar; 12.00
+      button.btn
+        a.btn-style(href='../page/payment.html') CHECKOUT
+script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+script(src='/public/css/bootstrap/js/bootstrap.js')

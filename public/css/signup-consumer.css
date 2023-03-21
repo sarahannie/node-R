@@ -1,0 +1,97 @@
+body{
+    background-image: url("../images/contact-us.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(4px);
+}
+
+.bg2{
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border: 1px solid grey;
+    width: fit-content;
+    display: block;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: white;
+    
+}
+
+.divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.divider-text span {
+    padding: 7px;
+    font-size: 12px;
+    position: relative;   
+    z-index: 2;
+}
+.divider-text:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    top: 55%;
+    left: 0;
+    z-index: 1;
+}
+
+.btn-facebook {
+    background-color: #405D9D;
+    color: #fff;
+}
+.btn-twitter {
+    background-color: #42AEEC;
+    color: #fff;
+}
+
+label {
+    display: inline-block;
+    margin-right: 10px;
+    text-align: left;
+  }
+  
+  input[type="radio"] {
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  
+  span {
+    vertical-align: middle;
+  }
+
+  .btn-color{
+    background-color:#10571b;
+    color: white;
+  }
+
+  .btn-color:hover{
+    background-color: #7cab83;
+  }
+
+  .login{
+    color:#10571b;
+    font-style: italic;
+  }
+
+  .login:hover{
+    color: #7cab83;
+  }
+
+  input.form-control:focus {
+    outline: none !important;
+    border: none; /* set border color */
+    box-shadow: none; 
+  }
+
+  @media only screen and (max-width: 800px) {
+    body {
+        height: 100vh;
+      } 
+}

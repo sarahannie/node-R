@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+body{
+    margin: 0px;
+    padding:0px;
+    font-family: 'Montserrat', sans-serif;
+   background-image: url(../images/signup.jpg);
+   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+.container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 900px;
+  }
+
+.bdy{
+    display: block;
+    justify-content: center;
+    margin-bottom: 50px;
+    padding: 20px;
+}
+
+.signup{
+    padding-left: 50px;
+    padding-top:30px ;
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 5px;
+    line-height: 1.5;
+}
+.card{
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.bt{
+    padding: 5px 5px;
+    background-color: #10571b;
+}
+
+.bg1{
+    padding: 20px 80px;
+    margin-left: 75px;
+    margin-bottom: 30px;
+    background-color: #10571b;
+    color: white;
+    border: 1px solid #498752;
+
+}
+.bt1{
+    margin-bottom: 0px;
+}
+
+.bt{
+ padding: 20px 88px;
+}
+.account{
+    padding-left: 120px;
+    text-align: center;
+    padding-bottom: 40px;
+}
+.login{
+    text-decoration: none;
+    color: #10571b;
+    font-size: larger;
+    font-style: italic;
+}
+
+.label{
+    text-decoration: none;
+    color: white;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 700px) {
+    .container {
+      width:300px;
+      margin-top: 200px;
+      margin-bottom: 500px;
+    }
+  
+    .signup {
+      padding-left: 20px;
+      font-size: 16px;
+    }
+  
+    .bdy {
+      margin-bottom: 30px;
+    }
+  
+    .bg1 {
+      padding: 10px 50px;
+      margin-left: 30px;
+      margin-right: 0px;
+      margin-bottom: 20px;
+    }
+  
+    .bt {
+      padding: 10px 58px;
+    }
+  
+    .account {
+      padding-left: 20px;
+      font-size: 14px;
+      padding-bottom: 20px;
+    }
+  }
+  
