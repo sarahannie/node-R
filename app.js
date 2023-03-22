@@ -7,7 +7,9 @@ const aboutRoute = require("./routes/aboutRoute");
 const cartRoute = require("./routes/cartRoute");
 const contactRoute = require("./routes/contactRoute");
 const indexRoute = require("./routes/indexRoute")
-const paymentRoute = require("./routes/paymentRoute")
+const paymentRoute = require("./routes/paymentRoute");
+const serviceRoute = require("./routes/serviceRoute")
+const signinRoute = require("./routes/signinRoute")
 
 
 app.set("view engine","pug");
@@ -22,7 +24,8 @@ app.use(aboutRoute);
 app.use(contactRoute);
 app.use(indexRoute)
 app.use(paymentRoute)
-app.use(paymentRoute)
+app.use(serviceRoute)
+app.use(signinRoute)
 
 
 app.listen(process.env.port || Port, ()=>{
