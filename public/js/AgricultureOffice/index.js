@@ -1,41 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-   
-    const showNavbar = (toggleId, navId, bodyId, headerId) =>{
-    const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId),
-    bodypd = document.getElementById(bodyId),
-    headerpd = document.getElementById(headerId)
-    
-    // Validate that all variables exist
-    if(toggle && nav && bodypd && headerpd){
-    toggle.addEventListener('click', ()=>{
-    // show navbar
-    nav.classList.toggle('show')
-    // change icon
-    toggle.classList.toggle('bx-x')
-    // add padding to body
-    bodypd.classList.toggle('body-pd')
-    // add padding to header
-    headerpd.classList.toggle('body-pd')
-    })
-    }
-    }
-    
-    showNavbar('header-toggle','nav-bar','body-pd','header')
-    
-    /*===== LINK ACTIVE =====*/
-    const linkColor = document.querySelectorAll('.nav_link')
-    
-    function colorLink(){
-    if(linkColor){
-    linkColor.forEach(l=> l.classList.remove('active'))
-    this.classList.add('active')
-    }
-    }
-    linkColor.forEach(l=> l.addEventListener('click', colorLink))
-    
-     // Your code to run since DOM is loaded and ready
-    });
+
 
 
 // chart
@@ -51,6 +14,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
     { month: "Jul", count: 28 },
     ];
 
+    const plugin = {
+        id: 'customCanvasBackgroundColor',
+        beforeDraw: (chart, args, options) => {
+          const {ctx} = chart;
+          ctx.save();
+          ctx.globalCompositeOperation = 'destination-over';
+          ctx.fillStyle = options.color || '#99ffff';
+          ctx.fillRect(0, 0, chart.width, chart.height);
+          ctx.restore();
+        }
+      };
+
     new Chart(
     document.getElementById('acquisitions'),
     {
@@ -59,12 +34,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
         labels: data.map(row => row.month),
         datasets: [
             {
-            backgroundColor: '#fff',
+            backgroundColor: '#000',
             label: 'Acquisitions by year',
             data: data.map(row => row.count)
             }
         ]
-        }
+        },
+        options: {
+            plugins: {
+              customCanvasBackgroundColor: {
+                color: '#fff',
+              }
+            }
+          },
+          plugins: [plugin],
     }
     );
 })();
