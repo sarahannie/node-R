@@ -139,7 +139,7 @@ a {
   background-color: var(--white-color);
 }
 .height-100 {
-  height: 100vh;
+  height: auto;
 }
 .dropdown-menu {
   top: 100%;

@@ -4,15 +4,15 @@
 // chart
 
 (async function() {
-    const data = [
-    { month: "Jan", count: 5 },
-    { month: "Feb", count: 30 },
-    { month: "Mar", count: 2 },
-    { month: "Apr", count: 20 },
-    { month: "May", count: 22 },
-    { month: "Jun", count: 14 },
-    { month: "Jul", count: 28 },
-    ];
+  const data = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July','August','Septmeber','october',"Novmber","December"],
+    datasets: [{
+      label: 'Total Sale of Year',
+      data: [65, 59, 80, 81, 26, 55, 100,25,2,50,30,60],
+      fill: false,
+      borderColor: '#10571b',
+    }]
+  };
 
     const plugin = {
         id: 'customCanvasBackgroundColor',
@@ -30,15 +30,12 @@
     document.getElementById('acquisitions'),
     {
         type: 'line',
-        data: {
-        labels: data.map(row => row.month),
-        datasets: [
-            {
-            backgroundColor: '#000',
-            label: 'Acquisitions by year',
-            data: data.map(row => row.count)
-            }
-        ]
+        data: data,
+        scales: {
+          y: { // defining min and max so hiding the dataset does not change scale range
+            min: 0,
+            max: 100
+          }
         },
         options: {
             plugins: {
