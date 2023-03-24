@@ -140,6 +140,7 @@ a {
 }
 .height-100 {
   height: auto;
+  width: fit-content;
   padding-bottom: 2%;
 }
 .dropdown-menu {
@@ -181,6 +182,12 @@ a {
   }
   .body-pd {
     padding-left: calc(var(--nav-width) + 188px);
+  }
+
+  .height-100 {
+    
+    width: auto;
+    
   }
 }
 

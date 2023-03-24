@@ -14,6 +14,29 @@ const signupconstumerRouter = require("./routes/signupconsumerRouter")
 const signupfarmerRouter = require("./routes/signupfarmerRoute")
 const signup = require("./routes/signup")
 
+// require("dotenv").config();
+const config = require("./config/database")
+//starting to add database
+
+const mongoose = require("mongoose");
+
+
+//creating a connection between the controller and the database
+mongoose.connect(config.database,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+const db = mongoose.connection
+
+// checking if database has connected
+db.once("open", ()=>{
+    console.log("connected to db")
+})
+//checking for the err in the mongodb
+db.on("error", (err)=>{
+    console.error(err)
+})
+
 
 app.set("view engine","pug");
 app.set("views", path.join(__dirname,"views"))
