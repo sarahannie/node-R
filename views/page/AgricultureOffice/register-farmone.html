@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- <link rel="stylesheet" href="/public/css/bootstrap/css/bootstrap.css" /> -->
-     <link rel="stylesheet" href="/public/css/AgricultureOffice/index.css" />
+     <link rel="stylesheet" href="/public/css/AgricultureOffice/register-farmone.css" />
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
      <link rel="stylesheet" href="/public/css/AgricultureOffice/include.css" />
      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"> -->
      <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
@@ -26,10 +27,139 @@
     <div w3-include-html="/public/includes/sidebar.html"></div>
     <!--Container Main start-->
     <div class="height-100 bg-light">
-        
+        <div class="bg1">
+            <div class="bg2">
+                    <article class="card-body mx-auto" style="max-width: 400px;">
+                        <h4 class="card-title mt-3 text-center">Create Account</h4>
+                        <p class="text-center">Let Work Together to Make Earning Easier</p>
+                        <form  id="regform" action="#" name="register" onsubmit="return validation(event);" method="POST">
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                             </div>
+                            <input name="fullName" class="form-control" placeholder="Full name" type="text" id="fullName">
+                            <small id="fnameErr"></small>
+                        </div> <!-- form-group// -->
+    
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                             </div>
+                            <input name="" class="form-control" placeholder="Email address" type="email" id="email">
+                            <small id="emailErr"></small>
+                        </div> <!-- form-group// -->
+    
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="">D.O.R</i> </span>
+                             </div>
+                            <input name="" class="form-control" placeholder="Date Of Registeration" type="date" id="dor" readonly>
+                        </div> <!-- form-group// -->
+    
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="">D.O.B</i> </span>
+                             </div>
+                            <input name="" class="form-control" placeholder="Date Of Birth" type="date" id="dob">
+                            <small id="dobErr"></small>
+                        </div> <!-- form-group// -->
+    
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="">NIN</i> </span>
+                             </div>
+                            <input name="" class="form-control" placeholder="NIN Number" type="text" id="nin">
+                            <small id="ninErr"></small>
+                        </div> <!-- form-group// -->
+    
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="">Unique</i> </span>
+                             </div>
+                            <input name="" class="form-control" placeholder="FO-0984" type="text" id="unique">
+                            <small id="uniqueErr"></small>
+                        </div> <!-- form-group// -->
+    
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="">Gender</i> </span>
+                             </div>&nbsp;&nbsp;&nbsp;
+                             <label class="label2">
+                                <input name="gender" class="gender" type="radio" value="male" id="gmale">
+                               
+                                <span>Male</span>
+                              </label>
+                              <label>
+                                <input name="gender" class="gender" type="radio" value="female" id="gfemale">
+                                
+                                <span>Female</span>
+                                <small id="gfemaleErr"></small>
+                              </label>
+                        </div> <!-- form-group// -->
+    
+    
+                       
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                            </div>
+                            <select class="custom-select" style="max-width: 120px;" id="country-code">
+                                <option selected="">+256</option>
+                                <option value="1">+254</option>
+                                <option value="2">+255</option>
+                                <option value="3">+234</option>
+                            </select>
+                            <input name="" class="form-control" placeholder="Phone number" type="text" id="phoneInput">
+                            <small id="phonenumErr"></small>
+                        </div> <!-- form-group// -->
+    
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="">Ward</i> </span>
+                             </div>
+                            <input name="" class="form-control" placeholder="Ward Name" type="text" id="ward">
+                            <small id="wardErr"></small>
+                        </div> <!-- form-group// -->
+    
+    
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+                            </div>
+                            <select id="activities" class="form-control">
+                                <option selected=""> Activites Undertaken</option>
+                                <option>Crop Farming</option>
+                                <option>Livestock Farming</option>
+                                <option>Fruit Farming</option>
+                                <option>seedline Farming</option>
+                            </select>
+                            <small id="activitiesErr"></small>
+                        </div> <!-- form-group end.// -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                            </div>
+                            <input class="form-control" placeholder="Create password" type="password" id="password">
+                            <small id="passwordErr"></small>
+                        </div> <!-- form-group// -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                            </div>
+                            <input class="form-control" placeholder="Repeat password" type="password" id="repassword">
+                            <small id="repasswordErr"></small>
+                        </div> <!-- form-group// -->                                      
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-color btn-block"> Create Account  </button>
+                        </div> <!-- form-group// -->      
+                        <p class="text-center">Have an account? <a href="" class="login">Log In</a> </p>                                                                 
+                    </form>
+                    </article>  
+            </div>
+        </div>
     </div>
     
-    <script src="/public/js/AgricultureOffice/index.js"></script>
+    <script src="/public/js/AgricultureOffice/register-farmone.js"></script>
     <script src="/public/js/AgricultureOffice/sidebar.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="/public/css/bootstrap/js/bootstrap.bundle.min.js"></script>
