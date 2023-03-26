@@ -1,0 +1,43 @@
+.marg {
+    margin-top: 50px; /* adjust the value as per your requirement */
+  }
+  
+  .chart {
+    margin-top: 70px; /* adjust the value as per your requirement */
+  }
+ 
+  .chat{
+    width:80vw;
+    height:50vh;
+  }
+  .chat1{
+    width:60vw;
+    height: 40vh;
+}
+  .chat2{
+    width:60vw;
+    height: 40vh;
+}
+
+  @media only screen and (max-width: 768px) {
+    .chart {
+      display: flex;
+      flex-direction: column;
+    }
+    .bar{
+        width: 300px;
+    }
+  
+    .chat {
+      width: 80vw;
+      height: 20vh;
+    }
+    .chat1 {
+        width: 80vw;
+        height: 20vh;
+      }
+    .chat2 {
+        width: 80vw;
+        height: 20vh;
+      }
+  }

@@ -185,8 +185,9 @@ a {
   }
 
   .height-100 {
-    
+    height: auto;
     width: auto;
+    margin-bottom: 1%;
     
   }
 }
