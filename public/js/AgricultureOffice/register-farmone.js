@@ -159,7 +159,7 @@ if (isValid) {
   }
     //validation for unique
     if (isValid) {
-    const foregex = /^FO-([0-9]{4a})+$/
+    const foregex = /^FO-([0-9]{4})+$/
     if (unique.value == "") {
       unique.style.border = "1px solid red"
       uniqueErr.textContent = "Unique number is required";
