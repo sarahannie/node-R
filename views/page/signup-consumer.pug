@@ -14,19 +14,19 @@ head
     article.card-body.mx-auto(style='max-width: 400px;')
       h4.card-title.mt-3.text-center Create Account
       p.text-center Let Make Shopping Easier
-      form#regform(action='#' name='register' onsubmit='return validation()' method='POST')
+      form#regform(action='#' name='register' onsubmit='return validation()' method='post')
         .form-group.input-group
           .input-group-prepend
             span.input-group-text
               i.fa.fa-user
-          input#fullName.form-control(name='' placeholder='Full name' type='text')
+          input#fullName.form-control(name='fullname' placeholder='Full name' type='text')
           small#fnameErr
         // form-group//
         .form-group.input-group
           .input-group-prepend
             span.input-group-text
               i.fa.fa-envelope
-          input#email.form-control(name='' placeholder='Email address' type='email')
+          input#email.form-control(name='email' placeholder='Email address' type='email')
           small#emailErr
         // form-group//
         .form-group.input-group
@@ -50,21 +50,21 @@ head
             option(value='1') +254
             option(value='2') +255
             option(value='3') +234
-          input#phoneInput.form-control(name='' placeholder='Phone number' type='text')
+          input#phoneInput.form-control(name='phone' placeholder='Phone number' type='text')
           small#phonenumErr
         // form-group//
         .form-group.input-group
           .input-group-prepend
             span.input-group-text
               i.fa.fa-lock
-          input#password.form-control(placeholder='Create password' type='password')
+          input#password.form-control(name="passsword"placeholder='Create password' type='password')
           small#passwordErr
         // form-group//
         .form-group.input-group
           .input-group-prepend
             span.input-group-text
               i.fa.fa-lock
-          input#repassword.form-control(placeholder='Repeat password' type='password')
+          input#repassword.form-control(name="repassword"placeholder='Repeat password' type='password')
           small#repasswordErr
         // form-group//
         .form-group
