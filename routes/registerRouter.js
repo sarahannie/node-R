@@ -7,7 +7,6 @@ router.get('/register', (req, res)=>{
 })
 
 
-module.exports = router
 
 router.post("/register", async(req,res)=>{
     try{
@@ -16,6 +15,9 @@ router.post("/register", async(req,res)=>{
         res.redirect("/")
         console.log(req.body)
     }catch(err){
-        res.status(400).render("register")
+        // res.status(400).render("register")
+        console.log(err)
     }
 })
+
+module.exports = router

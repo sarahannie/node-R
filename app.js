@@ -3,6 +3,8 @@ const path = require("path");
 const app = express();
 const router = express.Router();
 const Port = 3000;
+const bodyParser = require("body-parser")
+
 const aboutRoute = require("./routes/aboutRoute");
 const cartRoute = require("./routes/cartRoute");
 const contactRoute = require("./routes/contactRoute");
@@ -13,12 +15,17 @@ const signinRoute = require("./routes/signinRoute");
 const signupconstumerRouter = require("./routes/signupconsumerRouter")
 const signupfarmerRouter = require("./routes/signupfarmerRoute")
 const signup = require("./routes/signup")
+const register = require("./routes/registerRouter")
 
 // require("dotenv").config();
 const config = require("./config/database")
 //starting to add database
 
 const mongoose = require("mongoose");
+
+app.use(bodyParser.json());
+
+
 
 
 //creating a connection between the controller and the database
@@ -55,6 +62,7 @@ app.use(signinRoute)
 app.use(signupconstumerRouter)
 app.use(signupfarmerRouter)
 app.use(signup)
+app.use(register)
 
 
 app.listen(process.env.port || Port, ()=>{
