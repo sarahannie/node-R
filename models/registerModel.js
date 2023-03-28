@@ -5,10 +5,28 @@ const registerSchema = new mongoose.Schema({
         type:String,
         trim:"true"
     },
-    phonenumber:{
+    phone:{
         type:String,
         trim:"true"
     },
+    language:{
+        type:String,
+        trim:"true"
+    },
+    address:{
+        type:String,
+        trim:"true"
+    },
+    city:{
+        type:String,
+        trim:"true"
+    },
+    age:{
+        type:Number,
+        trim:"true"
+    }
+
+
     
 })
 

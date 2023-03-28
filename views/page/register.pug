@@ -7,7 +7,7 @@ head
   integrity=' sha384-gn5384xqq1aowxa+058rxpxpg6fy4iwvtnh0e263xmfcjlsawiggfaw='' crossorigin='anonymous')
   title Document
 card(style='width:30rem')
-  form
+  form#contact_form.well.form-horizontal(name='registration' action='/register' method='post')
     .form-row
       .form-group.col-md-6
         label(for='fullname') Full Name

@@ -17,16 +17,19 @@ const signupfarmerRouter = require("./routes/signupfarmerRoute")
 const signup = require("./routes/signup")
 const register = require("./routes/registerRouter")
 
+
+// support parsing of application/json type post data
+app.use(bodyParser.json());
+
+//support parsing of application/x-www-form-urlencoded post data
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
 // require("dotenv").config();
 const config = require("./config/database")
 //starting to add database
 
 const mongoose = require("mongoose");
-
-app.use(bodyParser.json());
-
-
-
 
 //creating a connection between the controller and the database
 mongoose.connect(config.database,{
