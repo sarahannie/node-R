@@ -38,14 +38,16 @@ mongoose.connect(config.database,{
 });
 const db = mongoose.connection
 
+//checking for the err in the mongodb
+db.on("error", (err)=>{
+    console.log(err)
+})
+
 // checking if database has connected
 db.once("open", ()=>{
     console.log("connected to db")
 })
-//checking for the err in the mongodb
-db.on("error", (err)=>{
-    console.error(err)
-})
+
 
 
 app.set("view engine","pug");

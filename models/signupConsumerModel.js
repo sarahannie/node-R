@@ -26,3 +26,6 @@ const signupSchema = new mongoose.Schema({
         trim:true
     }
 })
+
+
+module.exports = mongoose.model("Signup",signupSchema)
