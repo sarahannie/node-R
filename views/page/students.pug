@@ -33,6 +33,7 @@ head
                 th(scope='col') City
 
                 th(scope='col') Age
+                th(scope='col') status
 
         tbody
             if students.length 
@@ -48,10 +49,14 @@ head
 
                         td #{student.city}
                         td #{student.age}
+                        td
+                          //- sending information to the backend through forms
+                          form(method="post" action="/students/delete")
+                            input(type="hidden", name="id", value=student.id)
+                            button.btn.btn-danger(type="submit") Delete
 
-           
-
-            
+            else 
+              p there are no students in the database
 
 
 script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')

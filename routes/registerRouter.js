@@ -31,4 +31,14 @@ router.get("/students",async(req,res)=>{
     }
 })
 
+
+router.post("/students/delete", async(req,res)=>{
+    try{
+        await Register.deleteOne({_id:req.body.id})
+        res.redirect("back")
+    }catch(err){
+        console.log(err)
+    }
+})
+
 module.exports = router
