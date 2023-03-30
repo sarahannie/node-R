@@ -5,6 +5,8 @@ const router = express.Router();
 const Port = 3000;
 const bodyParser = require("body-parser")
 
+
+// router start
 const aboutRoute = require("./routes/aboutRoute");
 const cartRoute = require("./routes/cartRoute");
 const contactRoute = require("./routes/contactRoute");
@@ -16,6 +18,8 @@ const signupconstumerRouter = require("./routes/signupconsumerRouter")
 const signupfarmerRouter = require("./routes/signupfarmerRoute")
 const signup = require("./routes/signup")
 const register = require("./routes/registerRouter")
+const indexao = require("./routes/AgriOffice/indexRouter")
+// router stop
 
 
 // support parsing of application/json type post data
@@ -68,6 +72,8 @@ app.use(signupconstumerRouter)
 app.use(signupfarmerRouter)
 app.use(signup)
 app.use(register)
+// app usee for agriculture office
+app.use(indexao)
 
 
 app.listen(process.env.port || Port, ()=>{

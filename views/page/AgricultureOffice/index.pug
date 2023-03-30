@@ -1,0 +1,121 @@
+meta(charset="UTF-8")
+meta(http-equiv="X-UA-Compatible", content="IE=edge")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+//  <link rel="stylesheet" href="/public/css/bootstrap/css/bootstrap.css" /> 
+link(rel="stylesheet", href="/public/css/AgricultureOffice/index.css")
+link(rel="stylesheet", href="/public/css/AgricultureOffice/sale.css")
+link(rel="stylesheet", href="/public/css/AgricultureOffice/include.css")
+//  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"> 
+link(rel="stylesheet", type="text/css", href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css")
+link(rel="stylesheet", type="text/css", href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css")
+link(rel="stylesheet", type="text/css", href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css")
+link(rel="stylesheet", type="text/css", href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css")
+link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css", integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm", crossorigin="anonymous")
+link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+link(href="https://fonts.googleapis.com/css?family=Montserrat&display=swap", rel="stylesheet")
+script(src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js")
+link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css")
+title U-Farm
+div(w3-include-html="/public/includes/sidebar.html")
+// Container Main start
+.height-100.bg-light
+  .bg-cover
+    .container
+      .row
+        .col-12.col-md-6.col-lg-3.mb-4.marg
+          .card
+            .card-content
+              .card-body
+                .media.d-flex
+                  .align-self-center
+                    i.icon-pointer.danger.font-large-2.float-left
+                  .media-body.text-right
+                    h3 423
+                    span Total Visits
+        .col-12.col-md-6.col-lg-3.mb-4.marg
+          .card
+            .card-content
+              .card-body
+                .media.d-flex
+                  .align-self-center
+                    i.icon-graph.success.font-large-2.float-left
+                  .media-body.text-right
+                    h3 64.89 %
+                    span Total Daliy Sales
+        .col-xl-3.col-sm-6.col-12.marg
+          .card
+            .card-content
+              .card-body
+                .media.d-flex
+                  .media-body.text-left
+                    h3.success 156
+                    span New Constomer 
+                  .align-self-center
+                    i.icon-user.success.font-large-2.float-right
+        .col-xl-3.col-sm-6.col-12.marg
+          .card
+            .card-content
+              .card-body
+                .media.d-flex
+                  .media-body.text-left
+                    h3.warning 123
+                    span Orders for the month
+                  .align-self-center
+                    i.icon-pie-chart.warning.font-large-2.float-right
+    //  creating a chart 
+    .chart
+      .chat
+        canvas#acquisitions
+      .bar
+        canvas#pie
+    .chart
+      .chat2.chat-b
+        canvas#bar
+      .chat1.chat-b
+        canvas#daliy
+    .m-4.bg
+      .table-responsive
+        table.table.table-hover
+          thead.table-dark
+            tr
+              th #
+              th Full Name
+              th NIN
+              th Email
+              th Phone
+              th UniqueNo
+              th Status
+          tbody
+            tr
+              td 1
+              td Clark Kent
+              td 12345
+              td clarkkent@mail.com
+              td +2568034765
+              td AO-1234
+              td Aprove
+            tr
+              td 2
+              td Peter Parker
+              td 123456789567
+              td peterparker@mail.com
+              td +2568034765
+              td AO-1234
+              td Pending
+            tr
+              td 3
+              td John Carter
+              td 12345678
+              td johncarter@mail.com
+              td +2568034765
+              td AO-1234
+              td Rejected
+  // Container Main end
+  script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js", integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/XvoEmcPbYJoKT0Z", crossorigin="anonymous")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js", integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q", crossorigin="anonymous")
+  script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js", integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl", crossorigin="anonymous")
+  script(src="/public/js/AgricultureOffice/index.js")
+  script(src="/public/js/AgricultureOffice/sidebar.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+  script(src="/public/css/bootstrap/js/bootstrap.bundle.min.js")
+  script(src="/public/js/includes.js")
