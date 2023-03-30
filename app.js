@@ -19,6 +19,14 @@ const signupfarmerRouter = require("./routes/signupfarmerRoute")
 const signup = require("./routes/signup")
 const register = require("./routes/registerRouter")
 const indexao = require("./routes/AgriOffice/indexRouter")
+const registAdmin = require("./routes/AgriOffice/registerAdminRouter")
+const registFarmOne = require("./routes/AgriOffice/registerFarmo")
+const registeredUf = require("./routes/AgriOffice/registeredUf")
+const registeredAdmin = require("./routes/AgriOffice/registeredAdRouter")
+const registeredfarmone  = require("./routes/AgriOffice/registeredFarmoneRouter")
+const registereduser  = require("./routes/AgriOffice/registeredUserRouter")
+const setting  = require("./routes/AgriOffice/settingRouter")
+const sale  = require("./routes/AgriOffice/slaleRouter")
 // router stop
 
 
@@ -59,8 +67,6 @@ app.set("views", path.join(__dirname,"views"))
 app.set("views", path.join(__dirname,"views","page"))
 
 
-app.use(express.static(path.join(__dirname,"public")))
-
 app.use(cartRoute);
 app.use(aboutRoute);
 app.use(contactRoute);
@@ -72,8 +78,16 @@ app.use(signupconstumerRouter)
 app.use(signupfarmerRouter)
 app.use(signup)
 app.use(register)
-// app usee for agriculture office
+// app use for agriculture office
 app.use(indexao)
+app.use(registAdmin)
+app.use(registFarmOne)
+app.use(registeredUf)
+app.use(registeredAdmin)
+app.use(registeredfarmone)
+app.use(registereduser)
+app.use(setting )
+app.use(sale)
 
 
 app.listen(process.env.port || Port, ()=>{
