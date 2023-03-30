@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/registerFarmo",(req,res)=>{
+router.get("/registerFarmone",(req,res)=>{
     res.render("AgricultureOffice/register-farmone")
 })
 
