@@ -24,7 +24,14 @@ router.get("/students",async(req,res)=>{
     try{
         let items = await Register.find();
         // console.log(items)
-        res.render("students",{students:items})
+        let fees = await Register.aggregate([
+            {
+                "$group":{_id: "$all",
+                totalFees:{$sum: "$fees"}
+            }
+            }
+        ])
+        res.render("students",{students:items, total:fees[0]})
     }catch(err){
         console.log(err);
         res.send("failed to retrive student details")
