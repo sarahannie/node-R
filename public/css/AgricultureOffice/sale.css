@@ -19,6 +19,7 @@
     height: 40vh;
 }
 
+
   @media only screen and (max-width: 768px) {
     .chart {
       display: flex;
