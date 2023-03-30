@@ -41,4 +41,13 @@ router.post("/students/delete", async(req,res)=>{
     }
 })
 
+router.get("/edit_student/:id", async(req,res)=>{
+    try{
+        const item = await Register.findOne({_id:req.params.id})
+        res.render('student_edit',{student:item})
+    }catch(err){
+        console.log(err)
+    }
+})
+
 module.exports = router

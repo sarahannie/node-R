@@ -33,6 +33,8 @@ head
                 th(scope='col') City
 
                 th(scope='col') Age
+                th(scope='col') fees
+                th(scope='col') status
                 th(scope='col') status
 
         tbody
@@ -49,11 +51,14 @@ head
 
                         td #{student.city}
                         td #{student.age}
+                        td #{student.fees}
                         td
                           //- sending information to the backend through forms
                           form(method="post" action="/students/delete")
                             input(type="hidden", name="id", value=student.id)
                             button.btn.btn-danger(type="submit") Delete
+                        td 
+                          a.btn.btn-dark.btn-block(href="/edit_student/"+student.id) Edit
 
             else 
               p there are no students in the database

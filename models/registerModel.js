@@ -24,6 +24,10 @@ const registerSchema = new mongoose.Schema({
     age:{
         type:Number,
         trim:"true"
+    },
+    fees:{
+        type:Number,
+        trim:"true"
     }
 
 

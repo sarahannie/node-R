@@ -5,80 +5,6 @@ body{
     padding: 0px;
     box-sizing: border-box;
   }
-/* Styling for navbar start */
-.navbar{
-    padding-top: 0px;
-    padding-bottom:0px ;
-    background-color: #10571b;
-}
-.nav-item{
-    padding-left: 50px;
-    font-style: bold;
-    font-family: 'Space Mono', monospace;
-    color: rgb(204, 199, 199)
-}
-
-
-.navbar-brand{
-    padding-left: 20px;
-    font-family: 'Space Mono', monospace;
-    
-}
-
-@media only screen and (min-width: 890px) {
-  .navbar-brand {
-    color: white; /* change color to your desired value */
-  }
-    .navbar-brand:hover{
-        color: rgb(230, 231, 232);
-    }
-    .navsb{
-        padding-left: 500px;
-    }
-    .navbar-nav .nav-link:not(.dropdown-toggle) {
-       color: white;
-      }
-}
-
-@media only screen and (max-width:890px){
-  
-  .navbar-brand {
-    color: white;
-    padding-left: 100px;
-  }
-    .navbar-collapse {
-        position: fixed;
-        top: 56px;
-        left: -300px;
-        width: 300px;
-        height: 100%;
-        z-index: 1;
-        overflow-y: auto;
-        transition: all 0.3s ease-in-out;
-        background-color: #10571b;
-      }
-    .navbar-collapse.show {
-      left: 0;
-    }
-    .navbar-nav {
-      flex-direction: column;
-    }
-    .navbar-nav .nav-item {
-      margin: 0;
-      width: 100%;
-    }
-    .navbar-nav .nav-link:not(.dropdown-toggle) {
-      padding: 30px;
-      color: white;
-      text-align: center;
-      border-bottom: 1px solid #fff;
-    }
-   
-}
-
-
-
-/* Styling for navbar end */
 
 /* styling of carousel start */
 .carousel img {
@@ -150,6 +76,8 @@ body{
   padding: 5px 27px;
   text-decoration: solid;
 }
+
+
 
 }
 
