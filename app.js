@@ -29,6 +29,8 @@ const setting  = require("./routes/AgriOffice/settingRouter")
 const sale  = require("./routes/AgriOffice/slaleRouter")
 // router stop
 
+// use a middle for public folder
+app.use(express.static(path.join(__dirname,"public")))   
 
 // support parsing of application/json type post data
 app.use(bodyParser.json());
@@ -65,6 +67,8 @@ db.once("open", ()=>{
 app.set("view engine","pug");
 app.set("views", path.join(__dirname,"views"))
 app.set("views", path.join(__dirname,"views","page"))
+
+
 
 
 app.use(cartRoute);
