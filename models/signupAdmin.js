@@ -51,20 +51,8 @@ const signupFarmer = new mongoose.Schema({
         type:String,
         required:true,
         trim:true
-    },
-    password:{
-        type:String,
-        trim:true
-    },
-    repassword:{
-        type:String,
-        trim:true
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
     }
 })
 
 
-module.exports = mongoose.model("SignUP",signupFarmer)
+module.exports = mongoose.model("SignupAdmin",signupFarmer)
