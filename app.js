@@ -30,7 +30,7 @@ const sale  = require("./routes/AgriOffice/slaleRouter")
 // router stop
 
 // use a middle for public folder
-app.use(express.static(path.join(__dirname,"public")))   
+app.use(express.static('public'))  
 
 // support parsing of application/json type post data
 app.use(bodyParser.json());
