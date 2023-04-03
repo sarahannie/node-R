@@ -27,6 +27,7 @@ const registeredfarmone  = require("./routes/AgriOffice/registeredFarmoneRouter"
 const registereduser  = require("./routes/AgriOffice/registeredUserRouter")
 const setting  = require("./routes/AgriOffice/settingRouter")
 const sale  = require("./routes/AgriOffice/slaleRouter")
+const reg = require("./routes/regRoute")
 // router stop
 
 // use a middle for public folder
@@ -92,6 +93,7 @@ app.use(registeredfarmone)
 app.use(registereduser)
 app.use(setting )
 app.use(sale)
+app.use(reg)
 
 
 app.listen(process.env.port || Port, ()=>{

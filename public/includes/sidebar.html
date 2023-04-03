@@ -1,7 +1,17 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
   <header class="header" id="header">
     <div class="header_toggle">
-      <i class="bx bx-menu" id="header-toggle"></i>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-bar" aria-controls="nav-bar" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bx bx-menu" id="header-toggle"></i>
+      </button>
     </div>
     <div class="header_img">
       <img src="/images/img05.jpg" alt="" />
@@ -10,6 +20,7 @@
   <div class="l-navbar" id="nav-bar">
     <nav class="nav">
       <div>
+        
         <a href="/admin" class="nav_logo">
           <img src="/images/icons8-r-100.png"  class="bx nav_logo-icon" >
           <span class="nav_logo-name">U-Farm</span>
@@ -62,5 +73,20 @@
       </div>
     </nav>
   </div>
+
+  <script>
+    const navbar = document.querySelector('.navbar-collapse');
+    
+    document.querySelector('.navbar-toggler').addEventListener('click', function() {
+      navbar.classList.toggle('show');
+    });
+    
+    document.querySelector('.navbar-toggler.btn-close').addEventListener('click', function() {
+      navbar.classList.remove('show');
+    });
+    </script>
+</body>
+</html>
+  
 
  
