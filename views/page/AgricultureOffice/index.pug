@@ -4,12 +4,11 @@ head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  script( type='text/javascript', src='/js/AgricultureOffice/sidebar.js')
   link(rel='stylesheet' href='/css/AgricultureOffice/index.css')
   link(rel='stylesheet' href='/css/AgricultureOffice/sale.css')
   link(rel='stylesheet' href='/css/AgricultureOffice/include.css')
   
-  
+  link(rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css")
   link(rel='stylesheet' type='text/css' href='https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css')
   link(rel='stylesheet' type='text/css' href='https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css')
   link(rel='stylesheet' type='text/css' href='https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css')
@@ -20,52 +19,7 @@ head
   script(src='https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js')
   link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css')
   title U-Farm
-header#header.header
-  .header_toggle
-    i#header-toggle.bx.bx-menu
-  .header_img
-    img(src='/images/img05.jpg' alt='')
-#nav-bar.l-navbar
-  nav.nav
-    div
-      a.nav_logo(href='/admin')
-        img.bx.nav_logo-icon(src='/images/icons8-r-100.png')
-        span.nav_logo-name U-Farm
-      .nav_list
-        a.nav_link.active(href='/admin')
-          i.bx.bx-grid-alt.nav_icon
-          span.nav_name Dashboard
-        a#dropdownMenuLink.nav_link(href='#' role='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-          i.bx.bxs-registered.nav_icon
-          span.nav_name.dropdown-toggle Register
-          .dropdown-menu(aria-labelledby='dropdownMenuLink')
-            a.dropdown-item(href='/registerAdmin') Register Admin
-            li
-              hr.dropdown-divider
-            a.dropdown-item(href='/registerFarmone') Rgister FarmOne
-        a#dropdownMenuLink.nav_link(href='#' role='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-          i.bx.bxs-hard-hat.nav_icon
-          span.nav_name.dropdown-toggle Registered
-          .dropdown-menu(aria-labelledby='dropdownMenuLink')
-            a.dropdown-item(href='/registeredAdmin') Registered Admin
-            li
-              hr.dropdown-divider
-            a.dropdown-item(href='/registeredfarmone') Registered FarmOne
-            li
-              hr.dropdown-divider
-            a.dropdown-item(href='/registeredUf') Registered UrbanFarmers
-            li
-              hr.dropdown-divider
-            a.dropdown-item(href='/registeredUser') Registered User
-        a.nav_link(href='/sale')
-          i.bx.bx-accessibility.nav_icon
-          span.nav_name Sale
-        a.nav_link(href='/setting')
-          i.bx.bxs-lock-alt.nav_icon
-          span.nav_name Setting
-        a.nav_link.signout(href='/signin')
-          i.bx.bx-log-out.nav_icon
-          span.nav_name SignOut
+div(w3-include-html="/includes/sidebar.html")
 
 // Container Main start
 .height-100.bg-light
@@ -162,12 +116,14 @@ header#header.header
               td Rejected
   // Container Main end
   //- script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/XvoEmcPbYJoKT0Z' crossorigin='anonymous')
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
-  script(src='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"\
-integrity=' sha384-jzr6spejh4u02d8jot6vlehfe='' crossorigin='anonymous')
+  
+  
   script(src='/js/AgricultureOffice/index.js')
-  script( type='text/javascript', src='/js/AgricultureOffice/sidebar.js')
+  script(  src='/js/sidebar.js')
+  script(  src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js')
+  script(  src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
   
   script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-  script(type='text/javascript', src='/css/bootstrap/js/bootstrap.bundle.min.js')
+  //- script(type='text/javascript', src='/css/bootstrap/js/bootstrap.bundle.min.js')
   script(type='text/javascript', src='/js/includes.js')
+  
