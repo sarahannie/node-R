@@ -55,11 +55,11 @@ div(w3-include-html="/includes/sidebar.html")
                     td #{registers.ward}
                     td
                       //- sending information to the backend through forms
-                      form(method="post" action="/register/delete")
-                          input(type="hidden", name="id", value="register")
+                      form(method="post" action="/registerAdmin/delete")
+                          input(type="hidden", name="id", value=registers.id)
                           button.btn.btn-danger(type="submit") Delete
                     td 
-                          a.btn.btn-dark.btn-block(href="") Edit
+                          a.btn.btn-dark.btn-block(href="/register-admin-edit/"+registers.id) Edit
                     -  counts = counts + 1
                   
             

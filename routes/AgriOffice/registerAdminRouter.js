@@ -28,12 +28,25 @@ router.post("/registerAdmin", async(req,res)=>{
     }
 })
 
-router.post("/register/delete", (req,res)=>{
+router.post("/registerAdmin/delete", async(req,res)=>{
     try{
+        await Signup.deleteOne({_id:req.body.id})
+        res.redirect("back")
 
     }catch(err){
         console.log(err);
         res.send("failed to delete registerAdmin details")
+    }
+})
+
+router.get("/register-admin-edit/:id", async(req,res)=>{
+    try{
+        const item = await Signup.findOne({_id:req.params.id})
+        res.render("AgricultureOffice/register-admin-edit", {register:item})
+    }catch(err){
+        console.log(err);
+        res.send("failed to edit registerAdmin details")
+    
     }
 })
 
