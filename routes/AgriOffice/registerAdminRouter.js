@@ -12,7 +12,6 @@ router.get("/registeredAdmin", async(req,res) =>{
         let items = await Signup.find();
         res.render("AgricultureOffice/registered-admin", {register:items})
     }catch(err){
-        console.log(err);
         res.send("failed to retrive registerAdmin details")
     }
 })
@@ -47,6 +46,16 @@ router.get("/register-admin-edit/:id", async(req,res)=>{
         console.log(err);
         res.send("failed to edit registerAdmin details")
     
+    }
+})
+
+router.post("/register-admin-edit", async(req,res)=>{
+    try{
+        await Signup.findOneAndUpdate({_id:req.query.id}, req.body)
+        res.redirect("/registeredAdmin")
+    }catch(err){
+        res.send("failed to update registerAdmin details")
+        console.log(err)
     }
 })
 
