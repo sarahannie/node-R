@@ -4,6 +4,10 @@ const app = express();
 const router = express.Router();
 const Port = 3000;
 const bodyParser = require("body-parser")
+const session = require("express-session")
+const passport = require("passport")
+const User = require("./models/userModel")
+
 
 
 // router start
@@ -28,7 +32,20 @@ const registereduser  = require("./routes/AgriOffice/registeredUserRouter")
 const setting  = require("./routes/AgriOffice/settingRouter")
 const sale  = require("./routes/AgriOffice/slaleRouter")
 const reg = require("./routes/regRoute")
+const login = require("./routes/authRoutes")
 // router stop
+
+app.use(session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized:false
+}))
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // use a middle for public folder
 app.use(express.static('public'))  
@@ -94,6 +111,11 @@ app.use(registereduser)
 app.use(setting )
 app.use(sale)
 app.use(reg)
+app.use(login)
+
+app.get("*",(req,res)=>{
+    res.status(404).send("page does not exist")
+})
 
 
 app.listen(process.env.port || Port, ()=>{

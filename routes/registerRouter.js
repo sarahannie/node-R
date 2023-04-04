@@ -57,4 +57,13 @@ router.get("/edit_student/:id", async(req,res)=>{
     }
 })
 
+router.post("/edit_student", async(req, res)=>{
+    try{
+        await Register.findOneAndUpdate({_id:req.query.id},req.body)
+        res.redirect("/students")
+    }catch(err){
+        console.log(err)
+    }
+})
+
 module.exports = router

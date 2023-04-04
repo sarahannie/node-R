@@ -6,7 +6,7 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Document
 .container
-  form#contact_form.well.form-horizontal( name="registration" action='/registration' method='post')
+  form#contact_form.well.form-horizontal( name="reg" action='/reg' method='post')
     fieldset
       // Form Name
       legend
@@ -46,7 +46,7 @@ head
           .input-group
             span.input-group-addon
               i.glyphicon.glyphicon-user
-            input.form-control(name='dob' type='text')
+            input.form-control(name='dob' type='date')
       // Text input
       .form-group
         label.col-md-4.control-label Gender
