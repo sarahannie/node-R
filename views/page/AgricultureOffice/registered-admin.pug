@@ -35,6 +35,7 @@ div(w3-include-html="/includes/sidebar.html")
               th Gender
               th Phone
               th Ward 
+              th Role 
               th Action 
               th Action 
               th Status 
@@ -53,6 +54,7 @@ div(w3-include-html="/includes/sidebar.html")
                     td #{registers.gender}
                     td #{registers.phone}
                     td #{registers.ward}
+                    td #{registers.role}
                     td
                       //- sending information to the backend through forms
                       form(method="post" action="/registerAdmin/delete")
@@ -62,7 +64,7 @@ div(w3-include-html="/includes/sidebar.html")
                           a.btn.btn-dark.btn-block(href="/register-admin-edit/"+registers.id) Edit
                     -  counts = counts + 1
             else 
-              p there are no students in the database
+              p there are no Admin in the database
 
                   
             

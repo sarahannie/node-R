@@ -21,42 +21,51 @@ div(w3-include-html="/includes/sidebar.html")
 .height-100.bg-light
   .bg-cover
     .m-4.bg
-      .table-responsive-sm
+      .table-responsive
         table.table.table-hover
           thead.table-dark
             tr
               th #
               th Full Name
-              th NIN
               th Email
+              th D.O.R
+              th D.O.B
+              th NIN
+              th Unique 
+              th Gender
               th Phone
-              th UniqueNo
-              th Status
+              th Ward 
+              th Role 
+              th Action 
+              th Action 
+              th Status 
           tbody
-            tr
-              td 1
-              td Clark Kent
-              td 12345
-              td clarkkent@mail.com
-              td +2568034765
-              td AO-1234
-              td Aprove
-            tr
-              td 2
-              td Peter Parker
-              td 123456789567
-              td peterparker@mail.com
-              td +2568034765
-              td AO-1234
-              td Pending
-            tr
-              td 3
-              td John Carter
-              td 12345678
-              td johncarter@mail.com
-              td +2568034765
-              td AO-1234
-              td Rejected
+            if register.length
+              - var counts = 1
+                each registers in register
+                  tr
+                    td #{counts}
+                    td #{registers.fullname}
+                    td #{registers.email}
+                    td #{registers.dor}
+                    td #{registers.dob}
+                    td #{registers.nin}
+                    td #{registers.unique}
+                    td #{registers.gender}
+                    td #{registers.phone}
+                    td #{registers.ward}
+                    td #{registers.role}
+                    td
+                      //- sending information to the backend through forms
+                      form(method="post" action="/registerFarmone/delete")
+                          input(type="hidden", name="id", value=registers.id)
+                          button.btn.btn-danger(type="submit") Delete
+                    td 
+                          a.btn.btn-dark.btn-block(href="/register-farmone-edit/"+registers.id) Edit
+                    -  counts = counts + 1
+            else 
+              p there are no farmone in the database
+            
 script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js", integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/XvoEmcPbYJoKT0Z", crossorigin="anonymous")
 script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js", integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q", crossorigin="anonymous")
 script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js", integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl", crossorigin="anonymous")

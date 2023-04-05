@@ -51,8 +51,13 @@ const signupFarmer = new mongoose.Schema({
         type:String,
         required:true,
         trim:true
+    },
+    role:{
+        type:String,
+        required:true,
+        trim:true
     }
 })
 
 
-module.exports = mongoose.model("SignupAdmin",signupFarmer)
+module.exports = mongoose.model("Admin", signupFarmer)

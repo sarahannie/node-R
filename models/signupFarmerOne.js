@@ -67,4 +67,4 @@ const signupFarmer = new mongoose.Schema({
 })
 
 
-module.exports = mongoose.model("SignUP",signupFarmer)
+module.exports = mongoose.model("Staff",signupFarmer)

@@ -27,13 +27,13 @@ div(w3-include-html="/includes/sidebar.html")
       article.card-body.mx-auto(style="max-width: 400px;")
         h4.card-title.mt-3.text-center Create Account
         p.text-center Let Work Together to Make Earning Easier
-        form#regform(action="/registerAdmin", name="register", onsubmit="return validation(event);", method="post")
+        form#regform(action="/register-farm-edit?id="+register._id, name="register", onsubmit="return validation(event);", method="post")
           .form-group.input-group
             .input-group-prepend
               span.input-group-text
                 i.fa.fa-user
                 |  
-            input.form-control#fullName(name="fullname", placeholder="Full name", type="text")
+            input.form-control#fullName(name="fullname", placeholder="Full name", type="text", value=register.fullname)
             small#fnameErr
           //  form-group// 
           .form-group.input-group
@@ -41,7 +41,7 @@ div(w3-include-html="/includes/sidebar.html")
               span.input-group-text
                 i.fa.fa-envelope
                 |  
-            input.form-control#email(name="email", placeholder="Email address", type="email")
+            input.form-control#email(name="email", placeholder="Email address", type="email" value=register.email)
             small#emailErr
           //  form-group// 
           .form-group.input-group
@@ -49,14 +49,14 @@ div(w3-include-html="/includes/sidebar.html")
               span.input-group-text
                 i D.O.R
                 |  
-            input.form-control#dor(name="dor", placeholder="Date Of Registeration", type="date", readonly)
+            input.form-control#dor(name="dor", placeholder="Date Of Registeration", type="date", value=register.dor readonly)
           //  form-group// 
           .form-group.input-group
             .input-group-prepend
               span.input-group-text
                 i D.O.B
                 |  
-            input.form-control#dob(name="dob", placeholder="Date Of Birth", type="date")
+            input.form-control#dob(name="dob", placeholder="Date Of Birth", type="date" value=register.dob)
             small#dobErr
           //  form-group// 
           .form-group.input-group
@@ -64,7 +64,7 @@ div(w3-include-html="/includes/sidebar.html")
               span.input-group-text
                 i NIN
                 |  
-            input.form-control#nin(name="nin", placeholder="NIN Number", type="text")
+            input.form-control#nin(name="nin", placeholder="NIN Number", type="text" value=register.nin)
             small#ninErr
           //  form-group// 
           .form-group.input-group
@@ -72,7 +72,7 @@ div(w3-include-html="/includes/sidebar.html")
               span.input-group-text
                 i Unique
                 |  
-            input.form-control#unique(name="unique", placeholder="AO-0984", type="text")
+            input.form-control#unique(name="unique", placeholder="AO-0984", type="text" value=register.unique)
             small#uniqueErr
           //  form-group// 
           .form-group.input-group
@@ -83,10 +83,10 @@ div(w3-include-html="/includes/sidebar.html")
             |    
 
             label.label2
-              input.gender#gmale(name="gender", type="radio", value="male")
+              input.gender#gmale(name="gender", type="radio", value=register.gender)
               span Male
             label
-              input.gender#gfemale(name="gender", type="radio", value="female")
+              input.gender#gfemale(name="gender", type="radio", value=register.gender)
               span Female
               small#gfemaleErr
           //  form-group// 
@@ -100,7 +100,7 @@ div(w3-include-html="/includes/sidebar.html")
               option(value="1") +254
               option(value="2") +255
               option(value="3") +234
-            input.form-control#phoneInput(name="phone", placeholder="Phone number", type="text")
+            input.form-control#phoneInput(name="phone", placeholder="Phone number", type="text" value=register.phone)
             small#phonenumErr
           //  form-group// 
           .form-group.input-group
@@ -108,7 +108,7 @@ div(w3-include-html="/includes/sidebar.html")
               span.input-group-text
                 i Ward
                 |  
-            input.form-control#ward(name="ward", placeholder="Ward Name", type="text")
+            input.form-control#ward(name="ward", placeholder="Ward Name", type="text" value=register.ward)
             small#wardErr
           //  form-group// 
           .form-group.input-group
@@ -116,36 +116,18 @@ div(w3-include-html="/includes/sidebar.html")
               span.input-group-text
                 i.fa.fa-building
                 |  
-            select#activities.form-control(name="role")
+            select#activities.form-control
               option(selected) Activites Undertaken
               option Crop Farming
               option Livestock Farming
               option Fruit Farming
               option seedline Farming
             small#activitiesErr
-          //  form-group end.// 
-          .form-group.input-group
-            .input-group-prepend
-              span.input-group-text
-                i.fa.fa-lock
-                |  
-            input.form-control#password(name="" placeholder="Create password", type="password")
-            small#passwordErr
-          //  form-group// 
-          .form-group.input-group
-            .input-group-prepend
-              span.input-group-text
-                i.fa.fa-lock
-                |  
-            input.form-control#repassword(placeholder="Repeat password", type="password")
-            small#repasswordErr
+          
           //  form-group// 
           .form-group
-            button.btn.btn-color.btn-block(type="submit") Create Account
-          //  form-group// 
-          p.text-center
-            | Have an account? 
-            a.login(href) Log In
+            button.btn.btn-color.btn-block(type="submit") Update Farmone
+          
 script(type='text/javascript', src="/js/AgricultureOffice/register-admin.js")
 
 script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
