@@ -33,6 +33,12 @@ const setting  = require("./routes/AgriOffice/settingRouter")
 const sale  = require("./routes/AgriOffice/slaleRouter")
 const reg = require("./routes/regRoute")
 const login = require("./routes/authRoutes")
+
+
+// class example
+const aoRoute = require("./routes/aoRoute")
+const ufRoute = require("./routes/ufRoute")
+const foRoute = require("./routes/foRoute")
 // router stop
 
 app.use(session({
@@ -112,6 +118,12 @@ app.use(setting )
 app.use(sale)
 app.use(reg)
 app.use(login)
+
+
+// class example
+app.use(aoRoute)
+app.use(ufRoute)
+app.use(foRoute)
 
 app.get("*",(req,res)=>{
     res.status(404).send("page does not exist")

@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const connectEnsureLogin = require("connect-ensure-login")
 const Register = require("../models/registerModel")
 
 router.get('/register', (req, res)=>{
@@ -20,7 +21,7 @@ router.post("/register", async(req,res)=>{
     }
 })
 
-router.get("/students",async(req,res)=>{
+router.get("/students",connectEnsureLogin.ensureLoggedIn(), async(req,res)=>{
     try{
         let items = await Register.find();
         // console.log(items)
