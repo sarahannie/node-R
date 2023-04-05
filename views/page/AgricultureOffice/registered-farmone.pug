@@ -57,7 +57,7 @@ div(w3-include-html="/includes/sidebar.html")
                     td #{registers.role}
                     td
                       //- sending information to the backend through forms
-                      form(method="post" action="/registerFarmone/delete")
+                      form(method="post" action="/registerfarmone/delete")
                           input(type="hidden", name="id", value=registers.id)
                           button.btn.btn-danger(type="submit") Delete
                     td 

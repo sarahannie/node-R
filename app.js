@@ -53,6 +53,11 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use((req, res, next) => {
+    console.log(`${req.baseUrl}${req.url}`);
+    next();
+})
+
 // use a middle for public folder
 app.use(express.static('public'))  
 

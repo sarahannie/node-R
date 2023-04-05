@@ -26,13 +26,13 @@ div(w3-include-html="/includes/sidebar.html")
       article.card-body.mx-auto(style="max-width: 400px;")
         h4.card-title.mt-3.text-center Create Account
         p.text-center Let Work Together to Make Earning Easier
-        form#regform(action="/registerFarmone", name="register", onsubmit="return validation(event);", method="post")
+        form#regform(action="/registerfarmone", name="register", onsubmit="return validation(event);", method="post")
           .form-group.input-group
             .input-group-prepend
               span.input-group-text
                 i.fa.fa-user
                 |  
-            input.form-control#fullName(name="fullName", placeholder="Full name", type="text")
+            input.form-control#fullName(name="fullname", placeholder="Full name", type="text")
             small#fnameErr
           //  form-group// 
           .form-group.input-group
