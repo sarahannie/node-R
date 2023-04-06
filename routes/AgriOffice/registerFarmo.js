@@ -7,14 +7,6 @@ router.get("/registerfarmone",(req,res)=>{
 })
 
 
-router.get("/registeredfarmone", async(req,res)=>{
-    try{
-        let items = await Signup.find();
-        res.render("AgricultureOffice/registered-farmone", {register:items})
-    }catch(err){
-        res.send("failed to retrive register farmone detail")
-    }
-})
 
 router.post("/registerfarmone", async(req,res)=>{
     try{
@@ -24,6 +16,15 @@ router.post("/registerfarmone", async(req,res)=>{
     }catch(err){
         console.log(err);
         res.status(400).render("AgricultureOffice/register-farmone")
+    }
+})
+
+router.get("/registeredfarmone", async(req,res)=>{
+    try{
+        let items = await Signup.find();
+        res.render("AgricultureOffice/registered-farmone", {register:items})
+    }catch(err){
+        res.send("failed to retrive register farmone detail")
     }
 })
 

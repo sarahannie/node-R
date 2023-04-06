@@ -19,4 +19,16 @@ router.post("/signupconsumer", async(req,res)=>{
 })
 
 
+router.get("/registeredconsumer", async(req,res)=>{
+    try{
+        let items = await Signup.find();
+        res.render("AgricultureOffice/registered-user", {register:item})
+    }catch(err){
+        console.log(err);
+        res.send("failed to retrive register consumer")
+    }
+
+})
+
+
 module.exports = router
