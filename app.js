@@ -40,6 +40,8 @@ const login = require("./routes/authRoutes")
 // farmone route
 const indexFO = require("./routes/farmone/indexRoute")
 const registerfarmer = require("./routes/farmone/register-farmer")
+const registeredUser = require("./routes/farmone/registered-user")
+const registeredfarmer = require("./routes/farmone/registered-uf")
 
 
 // class example
@@ -47,6 +49,8 @@ const aoRoute = require("./routes/aoRoute")
 const ufRoute = require("./routes/ufRoute")
 const foRoute = require("./routes/foRoute")
 // router stop
+
+
 
 app.use(session({
     secret: "secret",
@@ -134,6 +138,8 @@ app.use(login)
 // app use for farmone
 app.use(indexFO)
 app.use(registerfarmer)
+app.use(registeredUser)
+app.use(registeredfarmer)
 
 
 // class example

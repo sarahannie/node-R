@@ -29,6 +29,16 @@ router.get("/registeredUser", async(req,res)=>{
     }
 
 })
+router.get("/reg-user", async(req,res)=>{
+    try{
+        let items = await Signup.find();
+        res.render("farmerOne/registered-user", {register:items})
+    }catch(err){
+        console.log(err);
+        res.send("failed to retrive register consumer")
+    }
+
+})
 
 router.get("/admin", async(req,res)=>{
     try{

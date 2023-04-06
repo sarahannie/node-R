@@ -44,6 +44,14 @@ router.get("/farmone", async(req,res)=>{
         res.send("failed to retrive register farmers detail")
     }
 })
+router.get("/reg-uf", async(req,res)=>{
+    try{
+        let item = await Signup.find();
+        res.render("farmerOne/registerd-uf",{register:item})
+    }catch(err){
+        res.send("failed to retrive register farmers detail")
+    }
+})
 
 router.post("/signupfarmer/delete", async(req,res)=>{
     try{
