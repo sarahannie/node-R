@@ -17,6 +17,16 @@ router.post("/signupfarmer",async(req,res)=>{
         res.status(400).render("signup-farmer")
     }
 })
+router.post("/farmer",async(req,res)=>{
+    try{
+        const signup = new Signup(req.body);
+        await signup.save();
+        res.redirect("/farmone")
+    }catch(err){
+        console.log(err)
+        res.status(400).render("farmerOne/register-farmer")
+    }
+})
 
 router.get("/registeredUf", async(req,res)=>{
     try{
@@ -26,8 +36,25 @@ router.get("/registeredUf", async(req,res)=>{
         res.send("failed to retrive register farmers detail")
     }
 })
+router.get("/farmone", async(req,res)=>{
+    try{
+        let item = await Signup.find();
+        res.render("farmerOne/index",{register:item})
+    }catch(err){
+        res.send("failed to retrive register farmers detail")
+    }
+})
 
 router.post("/signupfarmer/delete", async(req,res)=>{
+    try{
+        await Signup.deleteOne({_id:req.body.id})
+        res.redirect("back")
+    }catch(err){
+        console.log(err);
+        res.send("failed to delete registerfarmone details")
+    }
+})
+router.post("/farmer/delete", async(req,res)=>{
     try{
         await Signup.deleteOne({_id:req.body.id})
         res.redirect("back")
@@ -48,6 +75,7 @@ router.get("/register-farmer-edit/:id", async(req,res)=>{
     
     }
 })
+
 
 router.post("/register-farmer-edit", async(req,res)=>{
     try{

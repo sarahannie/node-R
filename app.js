@@ -37,6 +37,11 @@ const reg = require("./routes/regRoute")
 const login = require("./routes/authRoutes")
 
 
+// farmone route
+const indexFO = require("./routes/farmone/indexRoute")
+const registerfarmer = require("./routes/farmone/register-farmer")
+
+
 // class example
 const aoRoute = require("./routes/aoRoute")
 const ufRoute = require("./routes/ufRoute")
@@ -125,6 +130,10 @@ app.use(setting )
 app.use(sale)
 app.use(reg)
 app.use(login)
+
+// app use for farmone
+app.use(indexFO)
+app.use(registerfarmer)
 
 
 // class example

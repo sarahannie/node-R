@@ -30,6 +30,17 @@ router.get("/registeredUser", async(req,res)=>{
 
 })
 
+router.get("/admin", async(req,res)=>{
+    try{
+        let items = await Signup.find();
+        res.render("AgricultureOffice/index", {register:items})
+    }catch(err){
+        console.log(err);
+        res.send("failed to retrive register consumer")
+    }
+
+})
+
 router.post("/signupconsumer/delete", async(req,res)=>{
     try{
         await Signup.deleteOne({_id:req.body.id})

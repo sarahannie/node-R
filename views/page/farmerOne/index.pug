@@ -23,7 +23,7 @@ head
   script(src='https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js')
   link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css')
   title U-Farm
-div(w3-include-html="/includes/sidebar.html")
+div(w3-include-html="/includes/sidebarfo.html")
 
 // Container Main start
 .height-100.bg-light
@@ -48,8 +48,8 @@ div(w3-include-html="/includes/sidebar.html")
                   .align-self-center
                     i.icon-graph.success.font-large-2.float-left
                   .media-body.text-right
-                    h3 64.89 %
-                    span Total Daliy Sales
+                    h3 45
+                    span Registered User
         .col-xl-3.col-sm-6.col-12.marg
           .card
             .card-content
@@ -82,42 +82,51 @@ div(w3-include-html="/includes/sidebar.html")
       .chat1.chat-b
         canvas#daliy
     .m-4.bg
-      .table-responsive
+      .table-responsive-sm
         table.table.table-hover
           thead.table-dark
             tr
               th #
               th Full Name
-              th NIN
               th Email
+              th D.O.R
+              th D.O.B
+              th NIN
+              th Unique 
+              th Gender
               th Phone
-              th UniqueNo
-              th Status
+              th Ward 
+              th Role 
+              th Action 
+              th Action 
+              th Status 
           tbody
-            tr
-              td 1
-              td Clark Kent 
-              td  12345
-              td clarkkent@mail.com
-              td +2568034765
-              td AO-1234
-              td Aprove
-            tr
-              td 2
-              td Peter Parker
-              td 123456789567
-              td peterparker@mail.com
-              td +2568034765
-              td AO-1234
-              td Pending
-            tr
-              td 3
-              td John Carter
-              td 12345678
-              td johncarter@mail.com
-              td +2568034765
-              td AO-1234
-              td Rejected
+            if register.length
+              - var counts = 1
+                each registers in register
+                  tr
+                    td #{counts}
+                    td #{registers.fullname}
+                    td #{registers.email}
+                    td #{registers.dor}
+                    td #{registers.dob}
+                    td #{registers.nin}
+                    td #{registers.unique}
+                    td #{registers.gender}
+                    td #{registers.phone}
+                    td #{registers.ward}
+                    td #{registers.role}
+                    td
+                      //- sending information to the backend through forms
+                      form(method="post" action="/signupfarmer/delete")
+                          input(type="hidden", name="id", value=registers.id)
+                          button.btn.btn-danger(type="submit") Delete
+                    td 
+                          a.btn.btn-dark.btn-block(href="/register-farmer-edit/"+registers.id) Edit
+                    -  counts = counts + 1
+
+            else 
+                p no farmer has registered yet
   // Container Main end
   //- script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/XvoEmcPbYJoKT0Z' crossorigin='anonymous')
   
