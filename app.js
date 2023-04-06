@@ -8,6 +8,8 @@ const session = require("express-session")
 const passport = require("passport")
 const User = require("./models/userModel")
 
+require("dotenv").config()
+
 
 
 // router start
