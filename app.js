@@ -42,6 +42,8 @@ const indexFO = require("./routes/farmone/indexRoute")
 const registerfarmer = require("./routes/farmone/register-farmer")
 const registeredUser = require("./routes/farmone/registered-user")
 const registeredfarmer = require("./routes/farmone/registered-uf")
+const salesfarmerone= require("./routes/farmone/sale")
+const settingfarmerone= require("./routes/farmone/setting")
 
 
 // class example
@@ -140,6 +142,8 @@ app.use(indexFO)
 app.use(registerfarmer)
 app.use(registeredUser)
 app.use(registeredfarmer)
+app.use(salesfarmerone)
+app.use(settingfarmerone)
 
 
 // class example
