@@ -19,16 +19,28 @@ router.post("/signupconsumer", async(req,res)=>{
 })
 
 
-router.get("/registeredconsumer", async(req,res)=>{
+router.get("/registeredUser", async(req,res)=>{
     try{
         let items = await Signup.find();
-        res.render("AgricultureOffice/registered-user", {register:item})
+        res.render("AgricultureOffice/registered-user", {register:items})
     }catch(err){
         console.log(err);
         res.send("failed to retrive register consumer")
     }
 
 })
+
+router.post("/signupconsumer/delete", async(req,res)=>{
+    try{
+        await Signup.deleteOne({_id:req.body.id})
+        res.redirect("back")
+    }catch(err){
+        console.log(err)
+        res.send("failed to delete registered consumer")
+    }
+})
+
+
 
 
 module.exports = router
