@@ -76,11 +76,32 @@ router.get("/register-farmer-edit/:id", async(req,res)=>{
     }
 })
 
+router.get("/register-farmers-edit/:id", async(req,res)=>{
+    try{
+        const item = await Signup.findOne({_id:req.params.id})
+        res.render("farmerOne/register-farmer-edit", {register:item})
+
+    }catch(err){
+        console.log(err);
+        res.send("failed to edit registerfarone details")
+    
+    }
+})
+
 
 router.post("/register-farmer-edit", async(req,res)=>{
     try{
         await Signup.findOneAndUpdate({_id:req.query.id}, req.body)
         res.redirect("/registeredAdmin")
+    }catch(err){
+        console.log(err)
+        res.send("failed to update registerfarmer details")
+    }
+})
+router.post("/register-farmers-edit", async(req,res)=>{
+    try{
+        await Signup.findOneAndUpdate({_id:req.query.id}, req.body)
+        res.redirect("/farmone")
     }catch(err){
         console.log(err)
         res.send("failed to update registerfarmer details")

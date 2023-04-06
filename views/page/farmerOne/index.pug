@@ -118,11 +118,11 @@ div(w3-include-html="/includes/sidebarfo.html")
                     td #{registers.role}
                     td
                       //- sending information to the backend through forms
-                      form(method="post" action="/signupfarmer/delete")
+                      form(method="post" action="/farmer/delete")
                           input(type="hidden", name="id", value=registers.id)
                           button.btn.btn-danger(type="submit") Delete
                     td 
-                          a.btn.btn-dark.btn-block(href="/register-farmer-edit/"+registers.id) Edit
+                          a.btn.btn-dark.btn-block(href="/register-farmers-edit/"+registers.id) Edit
                     -  counts = counts + 1
 
             else 
