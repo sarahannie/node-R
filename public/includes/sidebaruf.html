@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="header_toggle">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-bar" aria-controls="nav-bar" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bx bx-menu" id="header-toggle"></i>
+      </button>
+    </div>
+    <div class="header_img">
+      <img src="/images/img05.jpg" alt="" />
+    </div>
+  </header>
+  <div class="l-navbar" id="nav-bar">
+    <nav class="nav">
+      <div>
+        
+        <a href="/urbanFarmer" class="nav_logo">
+          <img src="/images/icons8-r-100.png"  class="bx nav_logo-icon" >
+          <span class="nav_logo-name">U-Farm</span>
+        </a>
+        <div class="nav_list">
+          <a href="/urbanFarmer" class="nav_link active">
+            <i class="bx bx-grid-alt nav_icon"></i>
+            <span class="nav_name">Dashboard</span>
+          </a>
+          <a href="#" class="nav_link "   href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class='bx bxs-registered nav_icon '></i>
+            <span class="nav_name dropdown-toggle">Register</span>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="/farmer">Register farmer</a>
+            </div>
+          </a>
+
+          <a href="#" class="nav_link "   href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class='bx bxs-hard-hat nav_icon'></i>
+            <span class="nav_name dropdown-toggle">Registered</span>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><hr class="dropdown-divider"></li>
+              <a class="dropdown-item" href="/reg-uf">Registered UrbanFarmers</a>
+              <li><hr class="dropdown-divider"></li>
+              <a class="dropdown-item" href="/reg-user">Registered User</a>
+            </div>
+          </a>
+
+          <a href="/sales" class="nav_link">
+            <i class='bx bx-accessibility nav_icon'></i>
+            <span class="nav_name">Sale</span>
+          </a>
+
+          <a href="/settings" class="nav_link">
+            <i class='bx bxs-lock-alt  nav_icon'></i>
+            <span class="nav_name">Setting</span>
+          </a>
+
+          <a href="/signin" class="nav_link signout">
+            <i class="bx bx-log-out nav_icon"></i>
+            <span class="nav_name">SignOut</span>
+          </a>
+        </div>
+       
+      </div>
+    </nav>
+  </div>
+
+  <script>
+    const navbar = document.querySelector('.navbar-collapse');
+    
+    document.querySelector('.navbar-toggler').addEventListener('click', function() {
+      navbar.classList.toggle('show');
+    });
+    
+    document.querySelector('.navbar-toggler.btn-close').addEventListener('click', function() {
+      navbar.classList.remove('show');
+    });
+    </script>
+</body>
+</html>
+  
+
+ 
