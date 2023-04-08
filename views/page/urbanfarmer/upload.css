@@ -1,5 +1,4 @@
 .card1{
-    
     margin-bottom: 30px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
@@ -17,7 +16,7 @@
   }
   
   .card-img-top {
-    height: 100px;
+    height: 150px;
     object-fit: contain;
     border-radius: 10px 10px 0 0;
   }
@@ -77,10 +76,31 @@
     transform: scale(0.95);
   }
 
-  /* for tables */
-  .bg{
-    /* margin-bottom: 30px; */
+  .form-select{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 0px;
   }
+
+ /* media query for small screen */
+ @media only screen and (max-width: 760px) {
+  .plate{
+    margin-right: 10px;
+    margin-left: 30px;
+  }
+
+  .btn {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .form-select{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+
+
+ }
 
 
 
