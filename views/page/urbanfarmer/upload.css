@@ -1,8 +1,14 @@
-.card {
-    margin-left: 20px;
+.card1{
+    
     margin-bottom: 30px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
+    width: fit-content;
+  }
+
+  .plate{
+    margin-right: 100px;
+    margin-left: 90px;
   }
   
   .card:hover {
@@ -16,12 +22,12 @@
     border-radius: 10px 10px 0 0;
   }
   
-  .card-body {
-    padding: 25px;
+  .card-body1 {
+    padding: 15px;
   }
   
   .card-title {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 15px;
   }
@@ -54,13 +60,13 @@
     transition: all 0.3s ease-in-out;
   }
   
-  .btn-primary {
-    background-color: #0f440d;
+  .btn-pry {
+    background-color: #10571b;
     color: #fff;
     border: none;
   }
   
-  .btn-danger {
+  .btn-dag {
     background-color: #dc3545;
     color: #fff;
     border: none;
@@ -69,6 +75,11 @@
   .btn:hover {
     opacity: 0.8;
     transform: scale(0.95);
+  }
+
+  /* for tables */
+  .bg{
+    /* margin-bottom: 30px; */
   }
 
 
