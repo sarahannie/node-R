@@ -1,0 +1,47 @@
+meta(charset="UTF-8")
+meta(http-equiv="X-UA-Compatible", content="IE=edge")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+//  <link rel="stylesheet" href="/public/css/bootstrap/css/bootstrap.css" /> 
+link(rel="stylesheet", href="/public/css/AgricultureOffice/index.css")
+link(rel="stylesheet", href="/public/css/AgricultureOffice/sale.css")
+link(rel="stylesheet", href="/public/css/AgricultureOffice/include.css")
+link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css", integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm", crossorigin="anonymous")
+link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+link(href="https://fonts.googleapis.com/css?family=Montserrat&display=swap", rel="stylesheet")
+script(src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js")
+link(rel="stylesheet", href="./upload.css")
+link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css")
+title U-Farm
+div(w3-include-html="/public/includes/sidebaruf.html")
+// Container Main start
+.height-100.bg-light
+  .bg-cover
+    // Adding item the item  
+    .bg(style="margin-bottom: 90px;")
+      .container
+        h1 Add New Item
+        form(style="margin-bottom: 30px;")
+          .form-group
+            label(for="item-name") Item Name
+            input.form-control#item-name(type="text", required)
+          .form-group
+            label(for="item-description") Item Description
+            textarea.form-control#item-description(rows="3", required)
+          .form-group
+            label(for="item-quantity") Item Quantity
+            input.form-control#item-quantity(type="number", required)
+          .form-group
+            label(for="item-price") Item Price
+            input.form-control#item-price(type="number", required)
+          .form-group
+            label(for="item-image") Item Image
+            input.form-control-file#item-image(type="file", required)
+          button.btn.btn-pry(style="margin-bottom: 50px;", type="submit", onclick="addItem()") Submit
+// Container Main end
+script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js", integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/XvoEmcPbYJoKT0Z", crossorigin="anonymous")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js", integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q", crossorigin="anonymous")
+script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js", integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl", crossorigin="anonymous")
+script(src="/public/js/AgricultureOffice/index.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+script(src="/public/css/bootstrap/js/bootstrap.bundle.min.js")
+script(src="/public/js/includes.js")
