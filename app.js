@@ -13,7 +13,6 @@ require("dotenv").config()
 
 
 // router start
-const aboutRoute = require("./routes/aboutRoute");
 const cartRoute = require("./routes/cartRoute");
 const contactRoute = require("./routes/contactRoute");
 const indexRoute = require("./routes/indexRoute")
@@ -23,7 +22,8 @@ const signinRoute = require("./routes/signinRoute");
 const signupconstumerRouter = require("./routes/signupconsumerRouter")
 const signupfarmerRouter = require("./routes/signupfarmerRoute")
 const signup = require("./routes/signup")
-const register = require("./routes/registerRouter")
+
+// router  for admin 
 const indexao = require("./routes/AgriOffice/indexRouter")
 const registAdmin = require("./routes/AgriOffice/registerAdminRouter")
 const registFarmOne = require("./routes/AgriOffice/registerFarmo")
@@ -33,8 +33,6 @@ const registeredfarmone  = require("./routes/AgriOffice/registeredFarmoneRouter"
 const registereduser  = require("./routes/AgriOffice/registeredUserRouter")
 const setting  = require("./routes/AgriOffice/settingRouter")
 const sale  = require("./routes/AgriOffice/slaleRouter")
-const reg = require("./routes/regRoute")
-const login = require("./routes/authRoutes")
 
 
 // farmone route
@@ -47,8 +45,7 @@ const settingfarmerone= require("./routes/farmone/setting")
 
 
 // class example
-const aoRoute = require("./routes/aoRoute")
-const ufRoute = require("./routes/ufRoute")
+
 const foRoute = require("./routes/foRoute")
 // router stop
 
@@ -134,8 +131,7 @@ app.use(registeredfarmone)
 app.use(registereduser)
 app.use(setting )
 app.use(sale)
-app.use(reg)
-app.use(login)
+
 
 // app use for farmone
 app.use(indexFO)
@@ -147,9 +143,7 @@ app.use(settingfarmerone)
 
 
 // class example
-app.use(aoRoute)
-app.use(ufRoute)
-app.use(foRoute)
+
 
 app.get("*",(req,res)=>{
     res.status(404).send("page does not exist")
