@@ -12,7 +12,7 @@ require("dotenv").config()
 
 
 
-// router start
+// router start landing page
 const cartRoute = require("./routes/cartRoute");
 const contactRoute = require("./routes/contactRoute");
 const indexRoute = require("./routes/indexRoute")
@@ -43,10 +43,13 @@ const registeredfarmer = require("./routes/farmone/registered-uf")
 const salesfarmerone= require("./routes/farmone/sale")
 const settingfarmerone= require("./routes/farmone/setting")
 
+// router for urbanFarmer
+const indexuf = require("./routes/urbanfarmer/indexRoute")
+const adding = require("./routes/urbanfarmer/addingRoute")
+const updating = require("./routes/urbanfarmer/updateRoute")
+const order = require("./routes/urbanfarmer/orderRoute")
+const settinguf = require("./routes/urbanfarmer/settingRoute")
 
-// class example
-
-const foRoute = require("./routes/foRoute")
 // router stop
 
 
@@ -111,7 +114,6 @@ app.set("views", path.join(__dirname,"views","page"))
 
 
 app.use(cartRoute);
-app.use(aboutRoute);
 app.use(contactRoute);
 app.use(indexRoute)
 app.use(paymentRoute)
@@ -120,7 +122,7 @@ app.use(signinRoute)
 app.use(signupconstumerRouter)
 app.use(signupfarmerRouter)
 app.use(signup)
-app.use(register)
+
 // app use for agriculture office
 app.use(indexao)
 app.use(registAdmin)
@@ -142,7 +144,12 @@ app.use(salesfarmerone)
 app.use(settingfarmerone)
 
 
-// class example
+// app use for urbanfarmers
+app.use(indexuf);
+app.use(adding);
+app.use(updating);
+app.use(order);
+app.use(settinguf);
 
 
 app.get("*",(req,res)=>{
