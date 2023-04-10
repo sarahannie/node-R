@@ -7,10 +7,11 @@ const bodyParser = require("body-parser")
 const session = require("express-session")
 const passport = require("passport")
 const User = require("./models/userModel")
+const fileUpload = require('express-fileupload');
 
 require("dotenv").config()
 
-
+app.use(fileUpload());
 
 // router start landing page
 const cartRoute = require("./routes/cartRoute");

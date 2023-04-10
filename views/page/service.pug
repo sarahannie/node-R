@@ -23,14 +23,17 @@ div(w3-include-html='../includes/navbar.html')
     .col-md-8
       .search
         i.fa.fa-search
-        input.form-control(type='text' placeholder='Search For Products')
-        button.btn.btn-primary Search
+        form(method="post", action="/service")
+          input.form-control(type='text' name="search" placeholder='Search For Products')
+          button.btn.btn-primary Search
+  
 // Searchbar End
 // Card start
-each product in products
-  .bg1
-    .container
-      .row
+
+.bg1
+  .container
+    .row
+      each product in products
         .card.mx-auto.col-md-3.col-lg-4.col-10.mt-5
           img.mx-auto.img-thumbnail(src=product.image width='100px' height='20px')
           .card-body.text-center.mx-auto
@@ -40,7 +43,6 @@ each product in products
               .btn-flex
                 a.btn.details.px-auto(href='#') AddCart
                 a.btn.det.px-4(href='#') View
-        
 // Card end
 .space
 // footer start
