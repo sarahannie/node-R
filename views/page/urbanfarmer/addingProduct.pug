@@ -20,7 +20,7 @@ div(w3-include-html="/includes/sidebaruf.html")
     .bg(style="margin-bottom: 90px;")
       .container
         h1 Add New Item
-        form( action="/addproduct" name="product" style="margin-bottom: 30px;" method="post" enctype="multipart/form-data")
+        form( action="/addproduct" name="product" style="margin-bottom: 30px;" method="post" enctype="multipart/form-data" )
           .form-group
             label(for="item-name") Item Name
             input.form-control#item-name(type="text", name="name" required)

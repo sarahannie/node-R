@@ -21,7 +21,7 @@ router.post("/service", async (req,res)=>{
     try{
         let search = req.body.search
         // let items = await Product.find({name:{$regex : `.*${search}.*`}});
-        let items = await Product.find({ $or: [ { name: {$regex : `.*${search}.*`, $options:'i'} }, { description: {$regex : `.*${search}.*`} } ] });
+        let items = await Product.find({ $or: [ { name: {$regex : `.*${search}.*`, $options:'i'} }, { description: {$regex : `.*${search}.*`,$options:'i'} } ] });
         console.log(items); 
         res.render("service", { products: items })
     } catch(err){
