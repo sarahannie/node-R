@@ -31,7 +31,7 @@ div(w3-include-html="/includes/sidebaruf.html")
                   li.list-group-item Price: UGX #{product.price}
                 form(method="post" action="/updating/delete")
                   input(type="hidden", name="id", value=product.id)   
-                  a.btn.btn-dag( type="submit") Delete
+                  button.btn.btn-dag( type="submit") Delete
                   a.btn.btn-pry(href="#", onclick="editItem()") Edit
            
               
