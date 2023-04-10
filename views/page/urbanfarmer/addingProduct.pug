@@ -20,22 +20,22 @@ div(w3-include-html="/includes/sidebaruf.html")
     .bg(style="margin-bottom: 90px;")
       .container
         h1 Add New Item
-        form(style="margin-bottom: 30px;")
+        form( action="/addproduct" name="product" style="margin-bottom: 30px;" method="post" enctype="multipart/form-data")
           .form-group
             label(for="item-name") Item Name
-            input.form-control#item-name(type="text", required)
+            input.form-control#item-name(type="text", name="name" required)
           .form-group
             label(for="item-description") Item Description
-            textarea.form-control#item-description(rows="3", required)
+            textarea.form-control#item-description(rows="3", name="description" required)
           .form-group
             label(for="item-quantity") Item Quantity
-            input.form-control#item-quantity(type="number", required)
+            input.form-control#item-quantity(type="number", name="quantity" required)
           .form-group
             label(for="item-price") Item Price
-            input.form-control#item-price(type="number", required)
+            input.form-control#item-price(type="number", name="price"  required)
           .form-group
             label(for="item-image") Item Image
-            input.form-control-file#item-image(type="file", required)
+            input.form-control-file#item-image(type="file", name="image" required)
           button.btn.btn-pry(style="margin-bottom: 50px;", type="submit", onclick="addItem()") Submit
 // Container Main end
 script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js", integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/XvoEmcPbYJoKT0Z", crossorigin="anonymous")
