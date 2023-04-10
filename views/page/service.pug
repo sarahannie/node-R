@@ -35,7 +35,7 @@ div(w3-include-html='../includes/navbar.html')
     .row
       each product in products
         .card.mx-auto.col-md-3.col-lg-4.col-10.mt-5
-          img.mx-auto.img-thumbnail(src=product.image width='100px' height='20px')
+          img.mx-auto.img-thumbnail(src=product.image class="product-image")
           .card-body.text-center.mx-auto
             .cvp
               h5.card-title.font-weight-bold #{product.name}

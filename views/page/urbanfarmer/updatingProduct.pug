@@ -20,56 +20,21 @@ div(w3-include-html="/includes/sidebaruf.html")
     .bg1
       .container
         .row
-          .card1.plate.col-md-3.col-lg-4.col-10.mt-5
-            img.card-img-top(src="/images/African Maize.jpg", width="50px", height="50px", alt="Item Image")
-            .card-body1
-              h5.card-title Item Name:
-              p.card-text Item Description:
-              ul.list-group.list-group-flush
-                li.list-group-item Quantity: 10
-                li.list-group-item Price: UGX 50.00
-              a.btn.btn-pry(href="#", onclick="editItem()") Edit
-              a.btn.btn-dag(href="#", onclick="deleteItem()") Delete
-          .card1.plate.col-md-3.col-lg-4.col-10.mt-5
-            img.card-img-top(src="/images/African Maize.jpg", width="50px", height="50px", alt="Item Image")
-            .card-body1
-              h5.card-title Item Name:
-              p.card-text Item Description:
-              ul.list-group.list-group-flush
-                li.list-group-item Quantity: 10
-                li.list-group-item Price: UGX 50.00
-              a.btn.btn-pry(href="#", onclick="editItem()") Edit
-              a.btn.btn-dag(href="#", onclick="deleteItem()") Delete
-          .card1.plate.col-md-3.col-lg-4.col-10.mt-5
-            img.card-img-top(src="/images/African Maize.jpg", width="50px", height="50px", alt="Item Image")
-            .card-body1
-              h5.card-title Item Name:
-              p.card-text Item Description:
-              ul.list-group.list-group-flush
-                li.list-group-item Quantity: 10
-                li.list-group-item Price: UGX 50.00
-              a.btn.btn-pry(href="#", onclick="editItem()") Edit
-              a.btn.btn-dag(href="#", onclick="deleteItem()") Delete
-          .card1.plate.col-md-3.col-lg-4.col-10.mt-5
-            img.card-img-top(src="/images/African Maize.jpg", width="50px", height="50px", alt="Item Image")
-            .card-body1
-              h5.card-title Item Name:
-              p.card-text Item Description:
-              ul.list-group.list-group-flush
-                li.list-group-item Quantity: 10
-                li.list-group-item Price: UGX 50.00
-              a.btn.btn-pry(href="#", onclick="editItem()") Edit
-              a.btn.btn-dag(href="#", onclick="deleteItem()") Delete
-          .card1.mx-auto.col-md-3.col-lg-4.col-10.mt-5
-            img.card-img-top(src="/images/African Maize.jpg", width="50px", height="50px", alt="Item Image")
-            .card-body1
-              h5.card-title Item Name:
-              p.card-text Item Description:
-              ul.list-group.list-group-flush
-                li.list-group-item Quantity: 10
-                li.list-group-item Price: UGX 50.00
-              a.btn.btn-pry(href="#", onclick="editItem()") Edit
-              a.btn.btn-dag(href="#", onclick="deleteItem()") Delete
+          each product in products
+            .card1.plate.col-md-3.col-lg-4.col-10.mt-5
+              img.card-img-top(src=product.image, width="50px", height="50px", alt="Item Image")
+              .card-body1
+                h5.card-title Item Name:#{product.name}
+                p.card-text Item Description:#{product.description}
+                ul.list-group.list-group-flush
+                  li.list-group-item Quantity: #{product.quantity}
+                  li.list-group-item Price: UGX #{product.price}
+                form(method="post" action="/updating/delete")
+                  input(type="hidden", name="id", value=product.id)   
+                  a.btn.btn-dag( type="submit") Delete
+                  a.btn.btn-pry(href="#", onclick="editItem()") Edit
+           
+              
 // Container Main end
 script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js", integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/XvoEmcPbYJoKT0Z", crossorigin="anonymous")
 script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js", integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q", crossorigin="anonymous")
