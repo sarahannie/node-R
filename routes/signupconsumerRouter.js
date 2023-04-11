@@ -10,10 +10,11 @@ router.get('/signupconsumer', (req, res)=>{
 
 router.post("/signupconsumer", async(req,res)=>{
     try{
-        const signup = new Signup(req.body);
+        const signup = Signup(req.body);
         await signup.save()
         res.redirect("/signin")
     }catch(err){
+        console.log(err)
         res.status(400).render("signup-consumer")
     }
 })

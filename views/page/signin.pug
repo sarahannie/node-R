@@ -18,18 +18,18 @@ head
     article.card-body.mx-auto(style='max-width: 400px;')
       h4.card-title.mt-3.text-center Sign In
       p.text-center Let Make Shopping Easier
-      form#regform(action='#' name='register' onsubmit='return validation()' method='POST')
+      form#regform(action='/signin' name='register' method='post')
         .form-group.input-group
           .input-group-prepend
             span.input-group-text
               i.fa.fa-envelope
-          input#email.form-control(name='' placeholder='Email address' type='email')
+          input#email.form-control(name='email' placeholder='Email address' type='email')
           small#emailErr
         .form-group.input-group
           .input-group-prepend
             span.input-group-text
               i.fa.fa-lock
-          input#password.form-control(placeholder='Create password' type='password')
+          input#password.form-control(name='password' placeholder='Create password' type='password')
           small#passwordErr
         // form-group//
         .form-group

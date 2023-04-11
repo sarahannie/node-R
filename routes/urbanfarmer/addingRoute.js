@@ -27,7 +27,7 @@ router.post("/addproduct",upload.single("image"), async(req,res)=>{
             description: req.body.description,
             quantity: req.body.quantity,
             price: req.body.price,
-            image: 'images/' + req.file.filename
+            image: '../images/' + req.file.filename
         })
         // saving the product
         await newProduct.save();

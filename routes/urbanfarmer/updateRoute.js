@@ -28,6 +28,25 @@ router.post("/updating/delete", async(req,res)=>{
     }
 })
 
+router.get("/additing-edit/:id", async(req,res)=>{
+    try{
+        const item = await Product.findOne({_id:req.params.id})
+        res.render("urbanfarmer/addingProduct-edit", {products:item})
+    }catch(err){
+        console.log(err);
+        res.send("failed to edit product details")
+    }
+})
+router.post("/additing-edit", async(req,res)=>{
+    try{
+        const item = await Product.findOneAndUpdate({_id:req.query.id}, req.body)
+        res.redirect("/urbanfarmer")
+    }catch(err){
+        console.log(err);
+        res.send("failed to edit product details")
+    }
+})
+
 
 
 module.exports = router;

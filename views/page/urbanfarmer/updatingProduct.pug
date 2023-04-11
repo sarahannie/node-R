@@ -32,7 +32,7 @@ div(w3-include-html="/includes/sidebaruf.html")
                 form(method="post" action="/updating/delete")
                   input(type="hidden", name="id", value=product.id)   
                   button.btn.btn-dag( type="submit") Delete
-                  a.btn.btn-pry(href="#", onclick="editItem()") Edit
+                  a.btn.btn-pry(href=`/additing-edit/${product.id}`) Edit
            
               
 // Container Main end
