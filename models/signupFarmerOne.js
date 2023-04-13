@@ -1,4 +1,7 @@
 const mongoose = require("mongoose");
+const passportLocalMongoose = require('passport-local-mongoose');
+const passport = require("passport");
+
 
 const signupFarmer = new mongoose.Schema({
     fullname:{
@@ -66,5 +69,5 @@ const signupFarmer = new mongoose.Schema({
     }
 })
 
-
+signupFarmer.plugin(passportLocalMongoose);
 module.exports = mongoose.model("Staff",signupFarmer)
