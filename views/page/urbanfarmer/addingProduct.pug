@@ -28,6 +28,9 @@ div(w3-include-html="/includes/sidebaruf.html")
             label(for="item-description") Item Description
             textarea.form-control#item-description(rows="3", name="description" required)
           .form-group
+            label(for="item-quantity") Phone Number
+            input.form-control#item-quantity(type="tel", name="phone"  required)
+          .form-group
             label(for="item-quantity") Item Quantity
             input.form-control#item-quantity(type="number", name="quantity" required)
           .form-group

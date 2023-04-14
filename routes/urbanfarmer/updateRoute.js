@@ -37,6 +37,7 @@ router.get("/additing-edit/:id", async(req,res)=>{
         res.send("failed to edit product details")
     }
 })
+
 router.post("/additing-edit", async(req,res)=>{
     try{
         const item = await Product.findOneAndUpdate({_id:req.query.id}, req.body)

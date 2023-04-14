@@ -26,6 +26,7 @@ router.post("/addproduct",upload.single("image"), async(req,res)=>{
             name: req.body.name,
             description: req.body.description,
             quantity: req.body.quantity,
+            phone:req.body.phone,
             price: req.body.price,
             image: '../images/' + req.file.filename
         })
