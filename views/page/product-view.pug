@@ -1,0 +1,34 @@
+Copy code
+doctype html
+html
+  head
+    title Product View
+    style.
+      /* Add custom CSS styles for the modal */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+      .modal-content {
+        background-color: #fff;
+        margin: 10% auto;
+        padding: 20px;
+        max-width: 600px;
+        border-radius: 5px;
+      }
+  body(style="background-color: white; color: black;")
+    h1 Product Details
+    p Product Name: #{product.name}
+    p Product Price: #{product.price}
+    p Product Description: #{product.description}
+    p Product Quantity: #{product.quantity}
+    p Product Phone #{product.phone}
+    // Add more product details here as needed
+    button(onclick="openModal()")

@@ -33,7 +33,7 @@ router.get("/service/:id", async(req,res)=>{
         try{
             let item = await Product.findById(req.params.id)
             console.log(item)
-            res.render("service", {products:item})
+            res.render("product-view", {product:item})
         }catch(err){
             console.log(err)
         }
