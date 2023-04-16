@@ -29,14 +29,27 @@ router.post("/service", async (req,res)=>{
     } 
 })
 
-router.get("/service/:id", async(req,res)=>{
-        try{
-            let item = await Product.findById(req.params.id)
-            console.log(item)
-            res.render("product-view", {product:item})
-        }catch(err){
-            console.log(err)
-        }
-})
+// router.get("/service/:id", async(req,res)=>{
+//         try{
+//             let item = await Product.findById(req.params.id)
+//             console.log(item)
+//             res.render("service", {product:item})
+//         }catch(err){
+//             console.log(err)
+//         }
+// })
+
+router.get("/service/:id", async (req, res) => {
+    try {
+      let item = await Product.findById(req.params.id);
+      console.log(item);
+      res.render("service", { product: item }); // Pass "product" as a local variable to the template
+    } catch (err) {
+      console.log(err);
+    }
+    });
+
+
+
 
 module.exports = router;

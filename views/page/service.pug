@@ -42,7 +42,30 @@ div(w3-include-html='../includes/navbar.html')
               p.card-text UGX #{product.price}
               .btn-flex
                 a.btn.details.px-auto(href='#') AddCart
-                a.btn.det.px-4(onclick=`viewProduct('${product._id}')`) View
+                a.btn.det.px-4(type='button' data-toggle='modal' data-target='#exampleModalCenter') View
+
+
+// Modal
+#exampleModalCenter.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true')
+  .modal-dialog.modal-dialog-centered(role='document')
+    .modal-content
+      .modal-header
+        h5#exampleModalLongTitle.modal-title Product Description
+        button.close(type='button' data-dismiss='modal' aria-label='Close' onclick=`${product._id}`)
+          span(aria-hidden='true') &times;
+      .modal-body
+        if product
+          p Product Name: #{product.name}
+          p Product Price: UGX #{product.price}
+          p Product Description: #{product.description}
+          p Product Quantity: #{product.quantity}
+          p Product Phone: #{product.phone}
+        else
+          p No product data available
+      .modal-footer
+        button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+        button.btn.btn-primary(type='button') Save changes
+
 // Card end
 .space
 // footer start
@@ -58,4 +81,27 @@ script.
   function openModal() {
         document.getElementById('productModal').style.display = 'block';
       }
+script(src='https://code.jquery.com/jquery-3.6.0.min.js')
+script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')
+script.
+  $('.btn.det.px-4').on('click', function() {
+    var productId = $(this).attr('data-id');
+    $.ajax({
+      url: `/service/${productId}`,
+      method: 'GET',
+      success: function(data) {
+        $('#productModalBody').html(`
+          <p>Product Name: ${data.name}</p>
+          <p>Product Price: UGX ${data.price}</p>
+          <p>Product Description: ${data.description}</p>
+          <p>Product Quantity: ${data.quantity}</p>
+        `);
+      },
+      error: function(err) {
+        console.log(err);
+      }
+    });
+  });
  
