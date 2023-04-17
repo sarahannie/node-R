@@ -39,6 +39,26 @@ router.post("/addproduct",upload.single("image"), async(req,res)=>{
     }
 
 })
+router.post("/urbanfarmer",upload.single("image"), async(req,res)=>{
+    try{
+        // Create a new product from the form data
+        const newProduct = new Product({
+            name: req.body.name,
+            description: req.body.description,
+            quantity: req.body.quantity,
+            phone:req.body.phone,
+            price: req.body.price,
+            image: '../images/' + req.file.filename
+        })
+        // saving the product
+        await newProduct.save();
+        res.redirect("/urbanfarmer")
+        }catch(err){
+        console.log(err)
+        res.status(400).render("urbanfarmer/index")
+    }
+
+})
 
 
 

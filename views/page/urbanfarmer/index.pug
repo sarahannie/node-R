@@ -67,76 +67,44 @@ div(w3-include-html="/includes/sidebaruf.html")
     .bg1
       .container
         .row
-          .card1.plate.col-md-3.col-lg-4.col-10.mt-5
-            img.card-img-top(src="/images/African Maize.jpg", width="50px", height="50px", alt="Item Image")
-            .card-body1
-              h5.card-title Item Name:
-              p.card-text Item Description:
-              ul.list-group.list-group-flush
-                li.list-group-item Quantity: 10
-                li.list-group-item Price: UGX 50.00
-              a.btn.btn-pry(href="#", onclick="editItem()") Edit
-              a.btn.btn-dag(href="#", onclick="deleteItem()") Delete
-          .card1.plate.col-md-3.col-lg-4.col-10.mt-5
-            img.card-img-top(src="/images/African Maize.jpg", width="50px", height="50px", alt="Item Image")
-            .card-body1
-              h5.card-title Item Name:
-              p.card-text Item Description:
-              ul.list-group.list-group-flush
-                li.list-group-item Quantity: 10
-                li.list-group-item Price: UGX 50.00
-              a.btn.btn-pry(href="#", onclick="editItem()") Edit
-              a.btn.btn-dag(href="#", onclick="deleteItem()") Delete
-          .card1.plate.col-md-3.col-lg-4.col-10.mt-5
-            img.card-img-top(src="/images/African Maize.jpg", width="50px", height="50px", alt="Item Image")
-            .card-body1
-              h5.card-title Item Name:
-              p.card-text Item Description:
-              ul.list-group.list-group-flush
-                li.list-group-item Quantity: 10
-                li.list-group-item Price: UGX 50.00
-              a.btn.btn-pry(href="#", onclick="editItem()") Edit
-              a.btn.btn-dag(href="#", onclick="deleteItem()") Delete
-          .card1.plate.col-md-3.col-lg-4.col-10.mt-5
-            img.card-img-top(src="/images/African Maize.jpg", width="50px", height="50px", alt="Item Image")
-            .card-body1
-              h5.card-title Item Name:
-              p.card-text Item Description:
-              ul.list-group.list-group-flush
-                li.list-group-item Quantity: 10
-                li.list-group-item Price: UGX 50.00
-              a.btn.btn-pry(href="#", onclick="editItem()") Edit
-              a.btn.btn-dag(href="#", onclick="deleteItem()") Delete
-          .card1.mx-auto.col-md-3.col-lg-4.col-10.mt-5
-            img.card-img-top(src="/images/African Maize.jpg", width="50px", height="50px", alt="Item Image")
-            .card-body1
-              h5.card-title Item Name:
-              p.card-text Item Description:
-              ul.list-group.list-group-flush
-                li.list-group-item Quantity: 10
-                li.list-group-item Price: UGX 50.00
-              a.btn.btn-pry(href="#", onclick="editItem()") Edit
-              a.btn.btn-dag(href="#", onclick="deleteItem()") Delete
+          each product in products
+            .card1.plate.col-md-3.col-lg-4.col-10.mt-5
+              img.card-img-top(src=product.image, width="50px", height="50px", alt="Item Image")
+              .card-body1
+                h5.card-title Item Name:#{product.name}
+                p.card-text Description:#{product.description}
+                ul.list-group.list-group-flush
+                  li.list-group-item Quantity: #{product.quantity}
+                  li.list-group-item Price: UGX #{product.price}
+                form(method="post" action="/updating/delete")
+                  input(type="hidden", name="id", value=product.id)   
+                  button.btn.btn-dag( type="submit") Delete
+                  a.btn.btn-pry(href=`/additing-edit/${product.id}`) Edit
+          
+          
     // Adding item the item  
     .bg(style="margin-bottom: 90px;")
       .container
         h1 Add New Item
-        form(style="margin-bottom: 30px;")
+        form( action="/addproduct" name="product" style="margin-bottom: 30px;" method="post" enctype="multipart/form-data" )
           .form-group
             label(for="item-name") Item Name
-            input.form-control#item-name(type="text", required)
+            input.form-control#item-name(type="text", name="name" required)
           .form-group
             label(for="item-description") Item Description
-            textarea.form-control#item-description(rows="3", required)
+            textarea.form-control#item-description(rows="3", name="description" required)
+          .form-group
+            label(for="item-quantity") Phone Number
+            input.form-control#item-quantity(type="tel", name="phone"  required)
           .form-group
             label(for="item-quantity") Item Quantity
-            input.form-control#item-quantity(type="number", required)
+            input.form-control#item-quantity(type="number", name="quantity" required)
           .form-group
             label(for="item-price") Item Price
-            input.form-control#item-price(type="number", required)
+            input.form-control#item-price(type="number", name="price"  required)
           .form-group
             label(for="item-image") Item Image
-            input.form-control-file#item-image(type="file", required)
+            input.form-control-file#item-image(type="file", name="image" required)
           button.btn.btn-pry(style="margin-bottom: 50px;", type="submit", onclick="addItem()") Submit
     //  customer orders 
     .table-responsive

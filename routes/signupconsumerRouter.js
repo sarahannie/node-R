@@ -26,7 +26,7 @@ router.get("/registeredUser", async(req,res)=>{
         res.render("AgricultureOffice/registered-user", {register:items})
     }catch(err){
         console.log(err);
-        res.send("failed to retrive register consumer")
+        res.send("failed to retrive registered consumer")
     }
 
 })
@@ -47,7 +47,7 @@ router.get("/admin", async(req,res)=>{
         res.render("AgricultureOffice/index", {register:items})
     }catch(err){
         console.log(err);
-        res.send("failed to retrive register consumer")
+        res.send("failed to retrive registers consumer")
     }
 
 })
