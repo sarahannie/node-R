@@ -43,7 +43,7 @@ router.get("/service/:id", async (req, res) => {
     try {
       let item = await Product.findById(req.params.id);
       console.log(item);
-      res.render("service", { product: item }); // Pass "product" as a local variable to the template
+      res.json(item); // Pass "product" as a local variable to the template
     } catch (err) {
       console.log(err);
     }

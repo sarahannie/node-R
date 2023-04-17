@@ -42,7 +42,7 @@ div(w3-include-html='../includes/navbar.html')
               p.card-text UGX #{product.price}
               .btn-flex
                 a.btn.details.px-auto(href='#') AddCart
-                a.btn.det.px-4(type='button' data-toggle='modal' data-target='#exampleModalCenter') View
+                a.btn.det.px-4(type='button' data-toggle='modal' data-target='#exampleModalCenter' data-id=product._id) View
 
 
 // Modal
@@ -51,20 +51,13 @@ div(w3-include-html='../includes/navbar.html')
     .modal-content
       .modal-header
         h5#exampleModalLongTitle.modal-title Product Description
-        button.close(type='button' data-dismiss='modal' aria-label='Close' onclick=`${product._id}`)
+        button.close(type='button' data-dismiss='modal' aria-label='Close' )
           span(aria-hidden='true') &times;
-      .modal-body
-        if product
-          p Product Name: #{product.name}
-          p Product Price: UGX #{product.price}
-          p Product Description: #{product.description}
-          p Product Quantity: #{product.quantity}
-          p Product Phone: #{product.phone}
-        else
-          p No product data available
+      #productModalBody.modal-body
+
       .modal-footer
-        button.btn.btn-secondary(type='button' data-dismiss='modal') Close
-        button.btn.btn-primary(type='button') Save changes
+        button.btn.det.px-4(type='button' data-dismiss='modal') Close
+        
 
 // Card end
 .space
@@ -86,22 +79,22 @@ script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-
 script(src='https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')
 script.
-  $('.btn.det.px-4').on('click', function() {
-    var productId = $(this).attr('data-id');
-    $.ajax({
-      url: `/service/${productId}`,
-      method: 'GET',
-      success: function(data) {
-        $('#productModalBody').html(`
+  const modal = document.getElementById('productModalBody');
+  const btns = document.getElementsByClassName('btn det px-4');
+  let data;
+  for (let btn of btns) {
+    btn.addEventListener('click', async () => {
+      console.log(btn.getAttribute('data-id'));
+      data = await fetch(`http://localhost:3000/service/${btn.getAttribute('data-id')}`)
+        .then(async (data) => await data.json())
+    modal.innerHTML = `
           <p>Product Name: ${data.name}</p>
+          <p>Product IMage: <img src="${ data.image }" class="product-image" /></p>
           <p>Product Price: UGX ${data.price}</p>
           <p>Product Description: ${data.description}</p>
-          <p>Product Quantity: ${data.quantity}</p>
-        `);
-      },
-      error: function(err) {
-        console.log(err);
-      }
+          <p>Product Quantity:  ${data.quantity}</p>
+          <p>Product Phone:  ${data.phone}</p>
+          `
     });
-  });
- 
+  }
+
