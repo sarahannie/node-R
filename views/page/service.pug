@@ -40,7 +40,7 @@ div(w3-include-html='../includes/navbar.html')
             .cvp
               h5.card-title.font-weight-bold #{product.name}
               p.card-text UGX #{product.price}
-              form(method='post' action='')
+              form(method='post' action='/cart')
                 .btn-flex
                   input(type='hidden' value='product.id' name='productId')
                   a.btn.details.px-auto(href='#') AddCart
