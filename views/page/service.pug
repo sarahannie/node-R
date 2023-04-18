@@ -40,9 +40,11 @@ div(w3-include-html='../includes/navbar.html')
             .cvp
               h5.card-title.font-weight-bold #{product.name}
               p.card-text UGX #{product.price}
-              .btn-flex
-                a.btn.details.px-auto(href='#') AddCart
-                a.btn.det.px-4(type='button' data-toggle='modal' data-target='#exampleModalCenter' data-id=product._id) View
+              form(method='post' action='')
+                .btn-flex
+                  input(type='hidden' value='product.id' name='productId')
+                  a.btn.details.px-auto(href='#') AddCart
+                  a.btn.det.px-4(type='button' data-toggle='modal' data-target='#exampleModalCenter' data-id=product._id) View
 
 
 // Modal
