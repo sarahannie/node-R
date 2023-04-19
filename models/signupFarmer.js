@@ -65,7 +65,11 @@ const signupFarmer = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
-    }
+    },
+    isFarmer: {
+        type: Boolean,
+        default: true
+      }
 })
 
 signupFarmer.plugin(passportLocalMongoose);

@@ -57,7 +57,11 @@ const signupFarmer = new mongoose.Schema({
         type:String,
         required:true,
         trim:true
-    }
+    },
+    isAdmin: {
+        type: Boolean,
+        default: true
+      }
 })
 
 signupFarmer.plugin(passportLocalMongoose);

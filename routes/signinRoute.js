@@ -12,9 +12,26 @@ router.get("/signin", (req, res) => {
 });
 
 router.post('/signin', 
-  passport.authenticate('local', { failureRedirect: '/signin', successRedirect: '/', failureMessage:"Pasword is not correct" }),
+  passport.authenticate(["admin","user","farmer"," farmone"], { failureMessage:"Pasword is not correct" }),
   function(req, res) {
-    res.redirect('/');
-  });
+    if (req.admin.isAdmin) {
+      // Redirect to admin dashboard
+      res.redirect('/admin');
+    }else if (req.farmer.isFarmer) {
+      // Redirect to admin dashboard
+      res.redirect('/urbanfarmer');
+    }
+    else if (req.farmone.isFarmone) {
+      // Redirect to admin dashboard
+      res.redirect('/farmone');
+    }
+    else {
+      // Redirect to user dashboard
+      res.redirect('/');
+    }
+  }
+  
+
+  );
 
 module.exports = router;
