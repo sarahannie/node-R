@@ -4,7 +4,7 @@ const Port = 3000;
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const mongoose = require("mongoose");
-const passport = require("passport")
+const passport = require("./middleware/auth");
 
 
 require("dotenv").config();
@@ -55,6 +55,8 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
 }));
+
+app.use(passport.authenticate('session'));
 
 // Configure passport middleware
 app.use(passport.initialize());

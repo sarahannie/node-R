@@ -33,7 +33,7 @@ const signupSchema = new mongoose.Schema({
     }
 });
 
-signupSchema.plugin(passportLocalMongoose);
+// signupSchema.plugin(passportLocalMongoose);
 //  mongoose.model("Consumers", signupSchema);
 
 module.exports = mongoose.model("Consumers", signupSchema);
