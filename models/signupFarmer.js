@@ -58,8 +58,10 @@ const signupFarmer = new mongoose.Schema({
         required:true,
         trim:true
     },
-    activities:{
-        type:String
+    role:{
+        type:String,
+        required:true,
+        trim:true
     },
     password:{
         type:String,

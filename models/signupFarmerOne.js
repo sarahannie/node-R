@@ -54,6 +54,11 @@ const signupFarmer = new mongoose.Schema({
         required:true,
         trim:true
     },
+    role:{
+        type:String,
+        required:true,
+        trim:true
+    },
     ward:{
         type:String,
         required:true,

@@ -95,7 +95,7 @@ div(w3-include-html="/includes/sidebar.html")
               span.input-group-text
                 i.fa.fa-phone
                 |  
-            select.custom-select#country-code(style="max-width: 120px;")
+            select.custom-select#country-code(style="max-width: 120px;" name="countryCode")
               option(selected) +256
               option(value="1") +254
               option(value="2") +255
@@ -116,7 +116,7 @@ div(w3-include-html="/includes/sidebar.html")
               span.input-group-text
                 i.fa.fa-building
                 |  
-            select#activities.form-control
+            select#activities.form-control(name="role")
               option(selected) Activites Undertaken
               option Crop Farming
               option Livestock Farming
