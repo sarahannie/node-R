@@ -43,6 +43,10 @@ const signupFarmer = new mongoose.Schema({
         required:true,
         trim:true
     },
+    countryCode:{
+        true:String,
+        required:true
+    },
     phone:{
         type:String,
         required:true,
@@ -58,10 +62,18 @@ const signupFarmer = new mongoose.Schema({
         required:true,
         trim:true
     },
+    passsword:{
+        type:String,
+        required:true
+    },
     isAdmin: {
         type: Boolean,
         default: true
       }
+});
+
+signupFarmer.virtual('phone').get(function () {
+   return this.countryCode + this.phone;
 })
 
 signupFarmer.plugin(passportLocalMongoose);

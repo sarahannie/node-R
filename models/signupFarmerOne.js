@@ -45,6 +45,10 @@ const signupFarmer = new mongoose.Schema({
         required:true,
         trim:true
     },
+    countryCode:{
+        true:String,
+        required:true
+    },
     phone:{
         type:String,
         required:true,
@@ -72,6 +76,8 @@ const signupFarmer = new mongoose.Schema({
         default: true
       }
 })
-
+signupFarmer.virtual('phone').get(function () {
+    return this.countryCode + this.phone;
+ })
 signupFarmer.plugin(passportLocalMongoose);
 module.exports = mongoose.model("Staff",signupFarmer)

@@ -14,6 +14,9 @@ const signupSchema = new mongoose.Schema({
     gender: {
         type: String,
         trim: true
+    },countryCode:{
+        true:String,
+        required:true
     },
     phone: {
         type: Number,
@@ -32,6 +35,9 @@ const signupSchema = new mongoose.Schema({
         default: Date.now
     }
 });
+signupSchema.virtual('phone').get(function () {
+    return this.countryCode + this.phone;
+ })
 
 signupSchema.plugin(passportLocalMongoose);
 //  mongoose.model("Consumers", signupSchema);

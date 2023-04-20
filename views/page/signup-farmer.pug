@@ -73,7 +73,7 @@ head
             span.input-group-text
               i.fa.fa-phone
           select#country-code.custom-select(style='max-width: 120px;')
-            option(selected='') +256
+            option(selected='' name="countryCode") +256
             option(value='1') +254
             option(value='2') +255
             option(value='3') +234
@@ -92,7 +92,7 @@ head
             span.input-group-text
               i.fa.fa-building
           select#activities.form-control
-            option(selected='')  Activites Undertaken
+            option(selected='' name="activities")  Activites Undertaken
             option Crop Farming
             option Livestock Farming
             option Fruit Farming
@@ -103,14 +103,14 @@ head
           .input-group-prepend
             span.input-group-text
               i.fa.fa-lock
-          input#password.form-control(placeholder='Create password' type='password')
+          input#password.form-control(name="password" placeholder='Create password' type='password')
           small#passwordErr
         // form-group//
         .form-group.input-group
           .input-group-prepend
             span.input-group-text
               i.fa.fa-lock
-          input#repassword.form-control(placeholder='Repeat password' type='password')
+          input#repassword.form-control(name="repassword" placeholder='Repeat password' type='password')
           small#repasswordErr
         // form-group//
         .form-group

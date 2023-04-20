@@ -20,7 +20,7 @@ router.get("/updating", async (req,res)=>{
 
 router.get("/urbanFarmer", async (req,res)=>{
     try{
-        let items = await Product.find();
+        let items = await Product.find({userId: req.user.id});
         console.log(items); 
         res.render("urbanfarmer/index", { products: items })
     } catch(err){

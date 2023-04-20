@@ -5,6 +5,9 @@ const ProductItem = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Product"
       },
+    userId:{
+        type:mongoose.Schema.Types.ObjectId,
+    },
     name:{
         type:String,
         required:true
@@ -31,6 +34,10 @@ const ProductItem = new mongoose.Schema({
         type:String,
         required:true
         
+    },
+    status:{
+        type:Boolean,
+        default:false
     }
 })
 
