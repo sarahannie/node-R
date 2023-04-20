@@ -46,7 +46,7 @@ const signupFarmer = new mongoose.Schema({
     },
     countryCode:{
         true:String,
-        required:true
+        
     },
     phone:{
         type:String,
@@ -82,7 +82,7 @@ const signupFarmer = new mongoose.Schema({
 })
 
 
-signupFarmer.virtual('phone').get(function () {
+signupFarmer.virtual('phoneNumber').get(function () {
     return this.countryCode + this.phone;
  })
 signupFarmer.plugin(passportLocalMongoose);
