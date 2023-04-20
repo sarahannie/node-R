@@ -14,7 +14,7 @@ head
     article.card-body.mx-auto(style='max-width: 400px;')
       h4.card-title.mt-3.text-center Create Account
       p.text-center Let Work Together to Make Earning Easier
-      form#regform(action='#' name='register' onsubmit='return validation(event);' method='post')
+      form#regform(action='/signupfarmer' name='register' onsubmit='return validation(event);' method='post')
         .form-group.input-group
           .input-group-prepend
             span.input-group-text
@@ -73,10 +73,10 @@ head
             span.input-group-text
               i.fa.fa-phone
           select#country-code.custom-select(style='max-width: 120px;' name="countryCode")
-            option(selected='' ) +256
-            option(value='1') +254
-            option(value='2') +255
-            option(value='3') +234
+            option(value='+256' selected name="countryCode" ) +256
+            option(value='+254' name="countryCode") +254
+            option(value='+255' name="countryCode") +255
+            option(value='+234' name="countryCode") +234 
           input#phoneInput.form-control(name='phone' placeholder='Phone number' type='text')
           small#phonenumErr
         // form-group//
@@ -91,8 +91,8 @@ head
           .input-group-prepend
             span.input-group-text
               i.fa.fa-building
-          select#activities.form-control
-            option(selected='' name="activities")  Activites Undertaken
+          select#activities.form-control(name="role")
+            option(selected='' )  Activites Undertaken
             option Crop Farming
             option Livestock Farming
             option Fruit Farming

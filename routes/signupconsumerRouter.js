@@ -47,7 +47,7 @@ router.get("/admin", async(req,res)=>{
         res.render("AgricultureOffice/index", {register:items})
     }catch(err){
         console.log(err);
-        res.send("failed to retrive registers consumer")
+        res.send("fai   led to retrive registers consumer")
     }
 
 })

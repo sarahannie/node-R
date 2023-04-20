@@ -45,8 +45,7 @@ const signupFarmer = new mongoose.Schema({
         trim:true
     },
     countryCode:{
-        true:String,
-        
+        true:String,  
     },
     phone:{
         type:String,
