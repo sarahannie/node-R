@@ -62,7 +62,11 @@ const signupFarmer = new mongoose.Schema({
         required:true,
         trim:true
     },
-    passsword:{
+    password:{
+        type:String,
+        required:true
+    },
+    repassword:{
         type:String,
         required:true
     },

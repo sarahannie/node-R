@@ -95,11 +95,11 @@ div(w3-include-html="/includes/sidebar.html")
               span.input-group-text
                 i.fa.fa-phone
                 |  
-            select.custom-select#country-code(style="max-width: 120px;" name="countryCode")
-              option(selected) +256
-              option(value="1") +254
-              option(value="2") +255
-              option(value="3") +234
+            select#country-code.custom-select(style='max-width: 120px;' name="countryCode")
+            option(value='+256' selected name="countryCode" ) +256
+            option(value='+254' name="countryCode") +254
+            option(value='+255' name="countryCode") +255
+            option(value='+234' name="countryCode") +234
             input.form-control#phoneInput(name="phone", placeholder="Phone number", type="text" value=register.phone)
             small#phonenumErr
           //  form-group// 
