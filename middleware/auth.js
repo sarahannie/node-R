@@ -5,11 +5,13 @@ const Admin = require("../models/signupAdmin")
 const Farmers = require("../models/signupFarmer")
 const Farmone = require("../models/signupFarmerOne")
 
+const { checkPassword } = require('./password');
+
 const authenticateUser = (model, username, password, done) => {
   model.findOne({ email: username })
     .then((user) => {
       if (user) {
-        if (user.password === password) {
+        if (checkPassword(password, user.password)) {
           return done(null, user);
         }
         else {

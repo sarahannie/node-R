@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Product = require("../../models/product")
+const connectEnsureLogin = require("connect-ensure-login")
 
 
 // router.get("/updating", (req,res)=>{
@@ -18,7 +19,7 @@ router.get("/updating", async (req,res)=>{
     } 
 })
 
-router.get("/urbanFarmer", async (req,res)=>{
+router.get("/urbanFarmer", connectEnsureLogin.ensureLoggedIn("/signin"), async (req,res)=>{
     try{
         let items = await Product.find({userId: req.user.id});
         console.log(items); 

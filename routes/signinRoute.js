@@ -12,7 +12,7 @@ router.get("/signin", (req, res) => {
 });
 
 router.post('/signin',
-  passport.authenticate(["admin", "user", "farmer", "farmone"], { failureMessage: "Password is not correct" }),
+  passport.authenticate(["admin", "user", "farmer", "farmone"] ),
   function(req, res) {
     if (req.user.isAdmin) {
       // Redirect to admin dashboard

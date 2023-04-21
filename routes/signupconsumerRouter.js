@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const Signup = require("../models/signupConsumerModel")
+const Signup = require("../models/signupConsumerModel");
+
+const { encryptPassword } = require('../middleware/auth');
 
 router.get('/signupconsumer', (req, res)=>{
     res.render("signup-consumer")
@@ -10,6 +12,7 @@ router.get('/signupconsumer', (req, res)=>{
 
 router.post("/signupconsumer", async(req,res)=>{
     try{
+        req.body.password = encryptPassword(req.body.password);
         const signup = Signup(req.body);
         await signup.save()
         res.redirect("/signin")

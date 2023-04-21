@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const Signup = require("../../models/signupFarmerOne")
+const Signup = require("../../models/signupFarmerOne");
+const { encryptPassword } = require('../../middleware/password');
+
 
 router.get("/registerfarmone",(req,res)=>{
     res.render("AgricultureOffice/register-farmone")
@@ -10,6 +12,7 @@ router.get("/registerfarmone",(req,res)=>{
 
 router.post("/registerfarmone", async(req,res)=>{
     try{
+        req.body.password = encryptPassword(req.body.password);
         const signup = new Signup(req.body);
         await signup.save();
         res.redirect("/admin")

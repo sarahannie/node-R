@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Signup = require("../../models/signupAdmin")
+const { encryptPassword } = require('../../middleware/password');
 
 router.get("/registerAdmin",(req,res)=>{
     res.render("AgricultureOffice/register-admin")
@@ -9,6 +10,7 @@ router.get("/registerAdmin",(req,res)=>{
 
 router.get("/registeredAdmin", async(req,res) =>{
     try{
+        
         let items = await Signup.find();
         res.render("AgricultureOffice/registered-admin", {register:items})
     }catch(err){
@@ -18,6 +20,7 @@ router.get("/registeredAdmin", async(req,res) =>{
 
 router.post("/registerAdmin", async(req,res)=>{
     try{
+        req.body.password = encryptPassword(req.body.password);
         const signup = new Signup(req.body);
         await signup.save();
         res.redirect("/admin")
