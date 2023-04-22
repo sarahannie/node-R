@@ -84,6 +84,10 @@ body{
 .carousel img {
   max-height: 500px;
 }
+a.btn{
+  
+  font-family: 'Volkhov', serif;
+}
 
 .carousel-content  div{
   background-color: white;

@@ -2,9 +2,7 @@ const express = require("express");
 const Product = require("../models/product")
 const router = express.Router();
 
-// router.get('/service', (req, res)=>{
-//     res.render("service")
-// })
+
 
 router.get("/service", async (req,res)=>{
     try{

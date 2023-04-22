@@ -2,11 +2,12 @@ const express = require("express");
 const router = express.Router();
 const Signup = require("../models/signupConsumerModel");
 
-const { encryptPassword } = require('../middleware/auth');
+const { encryptPassword } = require('../middleware/password');
 
 router.get('/signupconsumer', (req, res)=>{
     res.render("signup-consumer")
 })
+
 
 
 
