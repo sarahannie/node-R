@@ -96,7 +96,7 @@ app.use(registFarmOne);
 app.use(indexFO);
 // app use for urbanfarmers
 app.use(adding);
-
+app.use(indexuf);
 
 
 
