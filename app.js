@@ -100,9 +100,9 @@ app.use(indexuf);
 
 
 
-// app.get("*", (req, res) => {
-//   res.status(404).send("page does not exist");
-// });
+app.get("*", (req, res) => {
+  res.status(404).send("page does not exist");
+});
 
 app.listen(process.env.port || Port, () => {
   console.log(`listen to port ${Port}`);
