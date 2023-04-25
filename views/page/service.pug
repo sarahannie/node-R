@@ -40,11 +40,19 @@ div(w3-include-html='../includes/navbar.html')
             .cvp
               h5.card-title.font-weight-bold #{product.name}
               p.card-text UGX #{product.price}
-              form(method='post' action='/cart')
-                .btn-flex
-                  input(type='hidden' value='product.id' name='productId')
-                  a.btn.details.px-auto(href='#') AddCart
-                  a.btn.det.px-4(type='button' data-toggle='modal' data-target='#exampleModalCenter' data-id=product._id) View
+              //- form(method='post' action='/service/'+product.id)
+              .btn-flex
+                input.btn.details.px-auto(type='button' value='Add to Cart' id="success" name='productId' data-id=product._id)
+                //- a.btn.details.px-auto(type="submit") AddCart
+                a.btn.det.px-4(type='button' data-toggle='modal' data-target='#exampleModalCenter' data-id=product._id) View
+
+button#success.btn.btn-success.m-1(type="button") Success
+
+//notification
+#alert-success.alert.fade(role='alert' data-mdb-color='success' data-mdb-position='top-right' data-mdb-stacking='true' data-mdb-width='535px' data-mdb-append-to-body='true' data-mdb-hidden='true' data-mdb-autohide='true' data-mdb-delay='2000')
+  | A simple success alert with
+  a.alert-link(href='#') an example link
+  | . Give it a click if you like.
 
 
 // Modal
@@ -86,7 +94,6 @@ script.
   let data;
   for (let btn of btns) {
     btn.addEventListener('click', async () => {
-      console.log(btn.getAttribute('data-id'));
       data = await fetch(`http://localhost:3000/service/${btn.getAttribute('data-id')}`)
         .then(async (data) => await data.json())
     modal.innerHTML = `
@@ -97,6 +104,57 @@ script.
           <p>Product Quantity:  ${data.quantity}</p>
           <p>Product Phone:  ${data.phone}</p>
           `
+    });
+  }
+
+  const addBtns = document.getElementsByClassName('btn details px-auto');
+
+  const triggers = [
+    'primary',
+    'secondary',
+    'success',
+    'danger',
+    'warning',
+    'info',
+    'light',
+    'dark',
+  ];
+  const basicInstances = [
+    'alert-primary',
+    'alert-secondary',
+    'alert-success',
+    'alert-danger',
+    'alert-warning',
+    'alert-info',
+    'alert-light',
+    'alert-dark',
+  ];
+
+  triggers.forEach((trigger, index) => {
+    let basicInstance = mdb.Alert.getInstance(document.getElementById(basicInstances[index]));
+    document.getElementById(trigger).addEventListener('click', () => {
+      basicInstance.show();
+    });
+  });
+  
+  for (let addBtn of addBtns) {
+    const itemId = addBtn.getAttribute('data-id');
+    addBtn.addEventListener('click', async () => {
+      await fetch(`service/${itemId}`, {
+        method: 'POST',
+        body: {
+          itemId: itemId,
+        }
+      }).then(async (data) => {
+        const notif = document.getElementById('notification');
+        const result = await data.json()
+        notif.innerHTML  = `<p>${result.success}</p>`;
+        notif.style.display = 'block';
+      }).catch((err) => {
+        const notif = document.getElementById('notification');
+        notif.innerHTML  = `<p>${err}</p>`;
+        notif.style.display = 'block';
+      })
     });
   }
 

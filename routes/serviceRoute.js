@@ -1,5 +1,6 @@
 const express = require("express");
-const Product = require("../models/product")
+const Product = require("../models/product");
+const Cart = require('../models/cart');
 const router = express.Router();
 
 
@@ -25,6 +26,19 @@ router.post("/service", async (req,res)=>{
         console.log(err)
         res.status(500).send("Failed to retrieve product details")
     } 
+})
+
+router.post("/service/:id", async (req, res) => {
+    try {
+        const user = req.user.id;
+        const cart = await Cart.findOne({productId: user});
+        cart.items.push(req.params.id);
+        await cart.updateOne({items: cart.items});
+        res.status(200).send({'success': 'item added to cart'});
+    } catch(err) {
+        console.log(err);
+        res.status(500).send({'Error': err});
+    }
 })
 
 // router.get("/service/:id", async(req,res)=>{
