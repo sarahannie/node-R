@@ -5,18 +5,18 @@ const Product = require("../models/product")
 const Consumer = require("../middleware/auth")
 
 router.get('/cart', async(req, res)=>{
-    const consumerId = req.user.id;
     try{
-        const cart = await Cart.findOne({consumerId})
-        if(cart && cart.items.length > 0){
-            return res.send(200).send(cart);
-        }
+        const consumerId = req.user.id;
+        const cart = await Cart.findOne({userId: consumerId}).populate('items[0].itemId');
         // else{
         //     res.send(null)
         // }
-        return res.render("cart")
+        console.log(cart)
+        return res.render("cart", {products:cart})
+        
         // console.log("***********")
     }catch(err){
+        console.log(err);
         res.status(500).send()
     }
 })

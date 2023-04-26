@@ -20,50 +20,24 @@ head
           .col
             h4
               b Shopping Cart
-          .col.align-self-center.text-right.text-muted
-            | 3 items
-      .row.border-top.border-bottom
-        .row.main.align-items-center
-          .col-2
-            img.img-fluid(src='/images/African Maize.jpg')
-          .col
-            .row.text-muted Products
-            .row sweet Maize
-          .col
-            a(href='#') -
-            a.border(href='#') 1
-            a(href='#') +
-          .col
-            | UGX 2.00 
-            span.close &#x2715;
-      .row
-        .row.main.align-items-center
-          .col-2
-            img.img-fluid(src='/images/brown-maize.jpg')
-          .col
-            .row.text-muted Products
-            .row African Maize
-          .col
-            a(href='#') -
-            a.border(href='#') 1
-            a(href='#') +
-          .col
-            | UGX 5.00 
-            span.close &#x2715;
-      .row.border-top.border-bottom
-        .row.main.align-items-center
-          .col-2
-            img.img-fluid(src='/images/African Yam.jpg')
-          .col
-            .row.text-muted Products
-            .row Africa Yam
-          .col
-            a(href='#') -
-            a.border(href='#') 1
-            a(href='#') +
-          .col
-            | UGX 4.00 
-            span.close &#x2715;
+            .col.align-self-center.text-right.text-muted
+              | 3 items
+        each product in products
+          .row.border-top.border-bottom
+            .row.main.align-items-center
+                .col-2
+                  img.img-fluid(src='/images/African Maize.jpg')
+                .col
+                  .row.text-muted Products
+                  .row sweet Maize
+                .col
+                  a(href='#') -
+                  a.border(href='#') 1
+                  a(href='#') +
+                .col
+                  | UGX 2.00 
+                  span.close &#x2715;
+      
       .back-to-shop
         a(href='/service') &larr;
         span.text-muted Back to shop

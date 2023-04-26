@@ -2,10 +2,11 @@ const express = require("express");
 const Product = require("../models/product");
 const Cart = require('../models/cart');
 const router = express.Router();
+const connectEnsureLogin = require("connect-ensure-login")
 
 
 
-router.get("/service", async (req,res)=>{
+router.get("/service", connectEnsureLogin.ensureLoggedIn("/signin"), async (req,res)=>{
     try{
         let items = await Product.find();
         res.render("service", { products: items })
