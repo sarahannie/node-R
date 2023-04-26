@@ -11,6 +11,10 @@ head
   script(src='https://kit.fontawesome.com/494d29de48.js' crossorigin='anonymous')
   link(rel='stylesheet' href='../css/service.css')
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+  //-  sweet alert plugin
+  script(src='sweetalert2.min.js')
+  link(rel='stylesheet' href='sweetalert2.min.css')
+  
   
  
   title U-Farm
@@ -46,14 +50,14 @@ div(w3-include-html='../includes/navbar.html')
                 //- a.btn.details.px-auto(type="submit") AddCart
                 a.btn.det.px-4(type='button' data-toggle='modal' data-target='#exampleModalCenter' data-id=product._id) View
 
-button#success.btn.btn-success.m-1(type="button") Success
+
+
+
 
 //notification
-#alert-success.alert.fade(role='alert' data-mdb-color='success' data-mdb-position='top-right' data-mdb-stacking='true' data-mdb-width='535px' data-mdb-append-to-body='true' data-mdb-hidden='true' data-mdb-autohide='true' data-mdb-delay='2000')
-  | A simple success alert with
-  a.alert-link(href='#') an example link
-  | . Give it a click if you like.
-
+<button data-swal-template="#my-template">
+  Trigger modal
+</button>
 
 // Modal
 #exampleModalCenter.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true')
@@ -75,6 +79,8 @@ button#success.btn.btn-success.m-1(type="button") Success
 div(w3-include-html='../includes/footer.html')
 // footer end
 script(src='../js/includes.js')
+script(src='https://cdn.jsdelivr.net/npm/sweetalert2@11')
+
 script(src='../css/bootstrap/js/bootstrap.js')
 script.
   function viewProduct(productId) {
@@ -107,36 +113,20 @@ script.
     });
   }
 
-  const addBtns = document.getElementsByClassName('btn details px-auto');
-
-  const triggers = [
-    'primary',
-    'secondary',
-    'success',
-    'danger',
-    'warning',
-    'info',
-    'light',
-    'dark',
-  ];
-  const basicInstances = [
-    'alert-primary',
-    'alert-secondary',
-    'alert-success',
-    'alert-danger',
-    'alert-warning',
-    'alert-info',
-    'alert-light',
-    'alert-dark',
-  ];
-
-  triggers.forEach((trigger, index) => {
-    let basicInstance = mdb.Alert.getInstance(document.getElementById(basicInstances[index]));
-    document.getElementById(trigger).addEventListener('click', () => {
-      basicInstance.show();
-    });
-  });
-  
+    const addBtns = document.getElementsByClassName('btn details px-auto');
+    
+   const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+ 
   for (let addBtn of addBtns) {
     const itemId = addBtn.getAttribute('data-id');
     addBtn.addEventListener('click', async () => {
@@ -148,8 +138,10 @@ script.
       }).then(async (data) => {
         const notif = document.getElementById('notification');
         const result = await data.json()
-        notif.innerHTML  = `<p>${result.success}</p>`;
-        notif.style.display = 'block';
+          Toast.fire({
+        icon: 'success',
+        title: 'Added To Cart Successfull'
+      })
       }).catch((err) => {
         const notif = document.getElementById('notification');
         notif.innerHTML  = `<p>${err}</p>`;
