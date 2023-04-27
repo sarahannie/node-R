@@ -7,12 +7,9 @@ const Consumer = require("../middleware/auth")
 router.get('/cart', async(req, res)=>{
     try{
         const consumerId = req.user.id;
-        const cart = await Cart.findOne({userId: consumerId}).populate('items[0].itemId');
-        // else{
-        //     res.send(null)
-        // }
-        console.log(cart)
-        return res.render("cart", {products:cart})
+        const cart = await Cart.findOne({userId: consumerId}).populate('items');
+        
+        return res.render("cart", {products:cart.items})
         
         // console.log("***********")
     }catch(err){
@@ -74,7 +71,7 @@ router.post("/cart", Consumer.authenticate('user'), async(req,res)=>{
 
 
 
-router.delete("/cart/", Consumer.authenticate('user'), async (req, res) => {
+router.delete("/cart/delete", async (req, res) => {
     const owner = req.user._id;
     const itemId = req.query.itemId;
     try {

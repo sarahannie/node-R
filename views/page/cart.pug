@@ -26,17 +26,18 @@ head
           .row.border-top.border-bottom
             .row.main.align-items-center
                 .col-2
-                  img.img-fluid(src='/images/African Maize.jpg')
+                  img.img-fluid(src=product.image)
                 .col
                   .row.text-muted Products
-                  .row sweet Maize
+                  .row #{product.name}
                 .col
                   a(href='#') -
-                  a.border(href='#') 1
+                  a.border(href='#') #{product.quantity}
                   a(href='#') +
                 .col
-                  | UGX 2.00 
-                  span.close &#x2715;
+                  | UGX #{product.price}
+            form(action="/cart/delete", method="post") 
+                  span.close     &#x2715;
       
       .back-to-shop
         a(href='/service') &larr;

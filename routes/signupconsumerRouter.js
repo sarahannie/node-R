@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Signup = require("../models/signupConsumerModel");
+const Cart = require('../models/cart');
 
 const { encryptPassword } = require('../middleware/password');
 
@@ -15,7 +16,10 @@ router.post("/signupconsumer", async(req,res)=>{
     try{
         req.body.password = encryptPassword(req.body.password);
         const signup = Signup(req.body);
+        const cart = Cart();
+        cart.userId = signup.id;
         await signup.save()
+        await cart.save()
         res.redirect("/signin")
     }catch(err){
         console.log(err)

@@ -32,7 +32,7 @@ router.post("/service", async (req,res)=>{
 router.post("/service/:id", async (req, res) => {
     try {
         const user = req.user.id;
-        const cart = await Cart.findOne({productId: user});
+        const cart = await Cart.findOne({userId: user});
         cart.items.push(req.params.id);
         await cart.updateOne({items: cart.items});
         res.status(200).send({'success': 'item added to cart'});
@@ -57,7 +57,7 @@ router.get("/service/:id", async (req, res) => {
       let item = await Product.findById(req.params.id);
       console.log(item);
       res.json(item); // Pass "product" as a local variable to the template
-    } catch (err) {
+    } catch (err) { 
       console.log(err);
     }
     });
