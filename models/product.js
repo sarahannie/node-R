@@ -35,6 +35,7 @@ const ProductItem = new mongoose.Schema({
     status:{
         type:Boolean,
         default:false
+        
     }
 })
 
