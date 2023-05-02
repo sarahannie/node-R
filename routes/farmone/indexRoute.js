@@ -35,7 +35,6 @@ router.get("/approve", async(req,res)=>{
 
     try{
         const items = await Product.find();
-        console.log(items); 
         res.render("farmerOne/approve", {products: items})
     } catch(err){
         console.log(err)
@@ -43,5 +42,75 @@ router.get("/approve", async(req,res)=>{
     } 
 })
 
+router.post("/approve/delete", async(req,res)=>{
+    try{
+        await Product.deleteOne({_id: req.body.id})
+        res.redirect("back")
+    }catch(err){
+        console.log(err)
+        res.send(" failed to delete product details")
+    }
+})
+
+// Route to approve a product
+router.post('/approve', async (req, res) => {
+    try {
+      const productId = req.body._id;
+      const product = await Product.findById(productId);
+      console.log(product)
+      if (!product) {
+        return res.status(404).send('Product not found');
+      }
+  
+      product.approvalStatus = 'approved';
+      await product.save();
+  
+      res.redirect('back');
+    } catch (err) {
+      console.log(err);
+      res.status(500).send('Failed to approve product');
+    }
+  });
+  
+  // Route to deny a product
+  router.post('/deny', async (req, res) => {
+    try {
+      const productId = req.body._id;
+      const product = await Product.findById(productId);
+        console.log(product)
+      if (!product) {
+        return res.status(404).send('Product not found');
+      }
+  
+      product.approvalStatus = 'denied';
+      await product.save();
+  
+      res.redirect('back');
+    } catch (err) {
+      console.log(err);
+      res.status(500).send('Failed to deny product');
+    }
+  });
+  
+  // Route to set a product to pending
+  router.post('/pending', async (req, res) => {
+    try {
+      const productId = req.body._id;
+      const product = await Product.findById(productId);
+  
+      if (!product) {
+        return res.status(404).send('Product not found');
+      }
+  
+      product.approvalStatus = 'pending';
+      await product.save();
+  
+      res.redirect('back');
+    } catch (err) {
+      console.log(err);
+      res.status(500).send('Failed to set product to pending');
+    }
+  });
+  
 
 module.exports = router;

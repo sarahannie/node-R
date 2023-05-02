@@ -8,7 +8,8 @@ const connectEnsureLogin = require("connect-ensure-login")
 
 router.get("/service", connectEnsureLogin.ensureLoggedIn("/signin"), async (req,res)=>{
     try{
-        let items = await Product.find();
+        // let items = await Product.find();
+        let items = await Product.find({ approvalStatus: 'approved' });
         res.render("service", { products: items })
     } catch(err){
         console.log(err)

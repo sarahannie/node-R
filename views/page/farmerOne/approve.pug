@@ -47,9 +47,25 @@ div(w3-include-html="/includes/sidebarfo.html")
                     td #{product.phone}
                     td 
                       //- sending information to the backend through forms
-                      form(method="post" action="/signupconsumer/delete")
+                      form(method="post" action="/updating/delete")
                           input(type="hidden", name="id", value=product.id)
                           button.btn.btn-danger(type="submit") Delete
+                    td 
+                      //- sending information to the backend through forms
+                      .dropdown
+                        button#approvalDropdown.btn.btn-black.text-light.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                          | Approval Status
+                        .dropdown-menu(aria-labelledby='approvalDropdown')
+                          form.dropdown-item(method='POST' action='/approve')
+                            input(type='hidden' name='_id' value=product.id)
+                            button.btn.btn-success(type='submit') Approved
+                          form.dropdown-item(method='POST' action='/deny')
+                            input(type='hidden' name='_id' value=product.id)
+                            button.btn.btn-danger(type='submit') Denied
+                          form.dropdown-item(method='POST' action='/pending')
+                            input(type='hidden' name='_id' value=product.id)
+                            button.btn.btn-warning(type='submit') Pending
+
                   
                     -  counts = counts + 1
 

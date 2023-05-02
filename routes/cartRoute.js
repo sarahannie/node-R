@@ -20,9 +20,9 @@ router.get('/cart', async(req, res)=>{
 
 
 router.post("/cart", async(req,res)=>{
-    const owner = req.user.id;
-    const {itemId, quantity} = req.body;
     try{
+        const owner = req.user.id;
+        const {itemId, quantity} = req.body;
         const cart = await Cart.findOne({userId:owner});
         const item = await Product.findOne({_id: itemId});
         if(!item){

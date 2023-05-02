@@ -17,7 +17,7 @@ router.get("/urbanFarmer", connectEnsureLogin.ensureLoggedIn("/signin"), async (
 
 router.get("/updating", async (req,res)=>{
     try{
-        const items = await Product.find({ userId: req.user.id, approvalStatus: "approved" });
+        const items = await Product.find();
         console.log(items); 
         res.render("urbanfarmer/updatingProduct", { products: items })
     } catch(err){
