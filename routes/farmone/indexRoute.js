@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const Product = require("../../models/product")
 const connectEnsureLogin = require("connect-ensure-login")
 
 
@@ -28,6 +29,18 @@ router.get("/sales", (req,res)=>{
 
 router.get("/settings", (req,res)=>{
     res.render("farmerOne/setting")
+})
+
+router.get("/approve", async(req,res)=>{
+
+    try{
+        const items = await Product.find();
+        console.log(items); 
+        res.render("farmerOne/approve", {products: items})
+    } catch(err){
+        console.log(err)
+        res.status(500).send("Failed to retrieve product details")
+    } 
 })
 
 

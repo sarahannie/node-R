@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const passport = require("passport");
-const passportLocalMongoose = require("passport-local-mongoose");
+
 
 const signupSchema = new mongoose.Schema({
     fullname: {
@@ -40,7 +39,5 @@ signupSchema.virtual('phoneNumber').get(function () {
     return this.countryCode + this.phone;
  })
 
-// signupSchema.plugin(passportLocalMongoose);
-//  mongoose.model("Consumers", signupSchema);
 
 module.exports = mongoose.model("Consumers", signupSchema);
