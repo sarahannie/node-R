@@ -22,15 +22,9 @@ router.get("/addproduct", (req,res)=>{
 router.post("/addproduct",upload.single("image"), async(req,res)=>{
     try{
         // Create a new product from the form data
-        const newProduct = new Product({
-            name: req.body.name,
-            description: req.body.description,
-            quantity: req.body.quantity,
-            phone:req.body.phone,
-            price: req.body.price,
-            image: '../images/' + req.file.filename,
-            userId: req.user.id
-        })
+        const newProduct = new Product(req.body);
+        newProduct.image = '../images/' + req.file.filename 
+        newProduct.userId = req.user.id
         // saving the product
         await newProduct.save();
         res.redirect("/addproduct")
@@ -43,14 +37,9 @@ router.post("/addproduct",upload.single("image"), async(req,res)=>{
 router.post("/urbanfarmer",upload.single("image"), async(req,res)=>{
     try{
         // Create a new product from the form data
-        const newProduct = new Product({
-            name: req.body.name,
-            description: req.body.description,
-            quantity: req.body.quantity,
-            phone:req.body.phone,
-            price: req.body.price,
-            image: '../images/' + req.file.filename
-        })
+        const newProduct = new Product(req.body);
+        newProduct.image = '../images/' + req.file.filename 
+        newProduct.userId = req.user.id
         // saving the product
         await newProduct.save();
         res.redirect("/urbanfarmer")

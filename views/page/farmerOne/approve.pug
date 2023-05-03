@@ -28,9 +28,13 @@ div(w3-include-html="/includes/sidebarfo.html")
               th #
               th Full Name
               th Image
+              th Type
               th Description
               th quantity
               th PhoneNumber
+              th Price
+              th mode of delivery
+              th payment method
               th Action
               th Status
           tbody
@@ -42,9 +46,13 @@ div(w3-include-html="/includes/sidebarfo.html")
                     td #{product.name}
                     td 
                       img.card-img-top(src=product.image, width="20px", height="30px", alt="Item Image")
+                    td #{product.type}
                     td #{product.description}
                     td #{product.quantity}
                     td #{product.phone}
+                    td #{product.price}
+                    td #{product.delivery}
+                    td #{product.pay}
                     td 
                       //- sending information to the backend through forms
                       form(method="post" action="/updating/delete")

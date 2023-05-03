@@ -101,11 +101,15 @@ script.
         .then(async (data) => await data.json())
     modal.innerHTML = `
           <p>Product Name: ${data.name}</p>
+          <p>Product Type: ${data.type}</p>
           <p>Product IMage: <img src="${ data.image }" class="product-image" /></p>
           <p>Product Price: UGX ${data.price}</p>
           <p>Product Description: ${data.description}</p>
           <p>Product Quantity:  ${data.quantity}</p>
           <p>Product Phone:  ${data.phone}</p>
+          <p>Product direction:  ${data.address}</p>
+          <p>Product mode of delivery:  ${data.delivery}</p>
+          <p>Product payment method:  ${data.pay}</p>
           `
     });
   }

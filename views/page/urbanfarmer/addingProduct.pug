@@ -8,7 +8,6 @@ link(rel="stylesheet", href="/css/AgricultureOffice/include.css")
 link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css", integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm", crossorigin="anonymous")
 link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
 link(href="https://fonts.googleapis.com/css?family=Montserrat&display=swap", rel="stylesheet")
-script(src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js")
 link(rel="stylesheet", href="/css/upload.css")
 link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css")
 title U-Farm
@@ -20,67 +19,70 @@ div(w3-include-html="/includes/sidebaruf.html")
     .bg(style="margin-bottom: 90px;")
       .container
         h1 Add New Item
-        form( action="/addproduct" name="product" style="margin-bottom: 30px;" method="post" enctype="multipart/form-data" )
+        form( action="/addproduct" name="product" style="margin-bottom: 30px;"  onsubmit='return validation(event);', method="post" enctype="multipart/form-data" )
           .form-group
             label(for="item-name") Item Name
-            input.form-control#item-name(type="text", name="name" required)
+            input#item-name.form-control(type="text",  placeholder="Enter Product name" name="name" )
           .form-group
             label(for="item-name") Ward
-            input.form-control#item-name(type="text", name="name" required)
+            input.form-control#ward(type="text",  placeholder="ward" name="ward" )
           .form-group
             span.input-group-text
               i Product type
             label.label2  &nbsp;
-            input#gmale.gender(name='types' type='radio' value='male')
+            input#organic(name='types' type='radio'  value='Organic')
             span Organic  &nbsp;
             label
-            input#gfemale.gender(name='types' type='radio' value='female')
+            input#inorganic(name='types' type='radio'   value='Non Organic')
             span Non Organic
+            span#org
           .form-group
             label(for="item-name") D.O.R
-            input.form-control#item-name(type="date", name="dor" required)
+            input.form-control#dor(type="date",  placeholder=""  name="dor" )
           .form-group
             label(for="item-name") Address
-            input.form-control#item-name(type="date", name="address" required)
+            input.form-control#address(type="type", placeholder="Please enter address" name="address" )
           .form-group
             span.input-group-text
               i Mode of payment
             label.label2  &nbsp;
-            input#gmale.gender(name='pay' type='radio' value='male')
+            input#pay(name='pay'  placeholder="Please enter your payment method" type='radio' value='Cash')
             span Cash  &nbsp;
             label
-            input#gfemale.gender(name='pay' type='radio' value='female')
+            input#pay1(name='pay'  placeholder="Please enter your payment method" type='radio' value='Mobile money')
             span Mobile money
+            span#org1
           .form-group
             label(for="item-description") Item Description
-            textarea.form-control#item-description(rows="3", name="description" required)
+            textarea.form-control#item-description(rows="3", name="description"  placeholder="Enter description in details" )
           .form-group
             label(for="item-quantity") Phone Number
-            input.form-control#item-quantity(type="tel", name="phone"  required)
+            input.form-control#phone(type="tel", name="phone"  placeholder="Please enter your phone number"  )
           .form-group
             span.input-group-text
               i Mode of Delivery
             label.label2  &nbsp;
-            input#gmale.gender(name='delivery' type='radio' value='male')
+            input#delivery1(name='delivery' type='radio'  placeholder="pls delivery method" value='Pickup')
             span Pickup &nbsp;
             label
-            input#gfemale.gender(name='delivery' type='radio' value='female')
+            input#delivery(name='delivery' type='radio'  placeholder="pls delivery method" value='Home Delivery')
             span Home Delivery
+            span#org2
           .form-group
             label(for="item-quantity") Item Quantity
-            input.form-control#item-quantity(type="number", name="quantity" required)
+            input.form-control#item-quantity(type="number",  placeholder="Pls input quantity" name="quantity" )
           .form-group
             label(for="item-price") Item Price
-            input.form-control#item-price(type="number", name="price"  required)
+            input.form-control#item-price(type="number", placeholder="Pls input price" name="price"  )
           .form-group
             label(for="item-image") Item Image
-            input.form-control-file#item-image(type="file", name="image" required)
-          button.btn.btn-pry(style="margin-bottom: 50px;", type="submit", onclick="addItem()") Submit
+            input.form-control-file#item-image(type="file",  placeholder="Pls input image" name="image" )
+          button.btn.btn-pry(style="margin-bottom: 50px;", type="submit" onclick="addItem()" ) Submit
 // Container Main end
 script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js", integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/XvoEmcPbYJoKT0Z", crossorigin="anonymous")
 script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js", integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q", crossorigin="anonymous")
 script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js", integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl", crossorigin="anonymous")
-script(src="/js/AgricultureOffice/index.js")
+script(src="/js/AgricultureOffice/products.js")
 script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
 script(src="/css/bootstrap/js/bootstrap.bundle.min.js")
 script(src="/js/includes.js")

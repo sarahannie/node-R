@@ -7,11 +7,11 @@ const ProductItem = new mongoose.Schema({
     },
     name:{
         type:String,
-        required:[true, "please input  Item name"]
+        required:true
     },
     ward:{
         type:String,
-        required:[true, "please input  Item ward"]
+        required:true
     },
     description:{
         type:String,
@@ -48,7 +48,7 @@ const ProductItem = new mongoose.Schema({
         
     },
     delivery:{
-        type:Number,
+        type:String,
         required:true
         
     },
