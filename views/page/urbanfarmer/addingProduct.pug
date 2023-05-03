@@ -25,11 +25,47 @@ div(w3-include-html="/includes/sidebaruf.html")
             label(for="item-name") Item Name
             input.form-control#item-name(type="text", name="name" required)
           .form-group
+            label(for="item-name") Ward
+            input.form-control#item-name(type="text", name="name" required)
+          .form-group
+            span.input-group-text
+              i Product type
+            label.label2  &nbsp;
+            input#gmale.gender(name='types' type='radio' value='male')
+            span Organic  &nbsp;
+            label
+            input#gfemale.gender(name='types' type='radio' value='female')
+            span Non Organic
+          .form-group
+            label(for="item-name") D.O.R
+            input.form-control#item-name(type="date", name="dor" required)
+          .form-group
+            label(for="item-name") Address
+            input.form-control#item-name(type="date", name="address" required)
+          .form-group
+            span.input-group-text
+              i Mode of payment
+            label.label2  &nbsp;
+            input#gmale.gender(name='pay' type='radio' value='male')
+            span Cash  &nbsp;
+            label
+            input#gfemale.gender(name='pay' type='radio' value='female')
+            span Mobile money
+          .form-group
             label(for="item-description") Item Description
             textarea.form-control#item-description(rows="3", name="description" required)
           .form-group
             label(for="item-quantity") Phone Number
             input.form-control#item-quantity(type="tel", name="phone"  required)
+          .form-group
+            span.input-group-text
+              i Mode of Delivery
+            label.label2  &nbsp;
+            input#gmale.gender(name='delivery' type='radio' value='male')
+            span Pickup &nbsp;
+            label
+            input#gfemale.gender(name='delivery' type='radio' value='female')
+            span Home Delivery
           .form-group
             label(for="item-quantity") Item Quantity
             input.form-control#item-quantity(type="number", name="quantity" required)

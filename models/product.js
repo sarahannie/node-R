@@ -7,12 +7,32 @@ const ProductItem = new mongoose.Schema({
     },
     name:{
         type:String,
-        required:true
+        required:[true, "please input  Item name"]
+    },
+    ward:{
+        type:String,
+        required:[true, "please input  Item ward"]
     },
     description:{
         type:String,
         required:true
         
+    },
+    pay:{
+        type:String,
+        required:true
+    },
+    types:{
+        type:String,
+        required:true
+    },
+    dor:{
+        type:String,
+        required:true
+    },
+    address:{
+        type:String,
+        required:true
     },
     quantity:{
         type:Number,
@@ -27,10 +47,14 @@ const ProductItem = new mongoose.Schema({
         required:true
         
     },
-    image:{
-        type:String,
+    delivery:{
+        type:Number,
         required:true
         
+    },
+    image:{
+        type:String,
+        required:true 
     },
     approvalStatus: {
       type: String,
