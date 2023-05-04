@@ -10,6 +10,7 @@ router.get('/signupfarmer', (req,res)=>{
 
 router.post("/signupfarmer",async(req,res)=>{
     try{
+        Signup.farmers.updateMany({username: null}, {$set: {username: "unique_value"}})
         req.body.password = encryptPassword(req.body.password);
         const signup = new Signup(req.body);
         await signup.save();

@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const passportLocalMongoose = require('passport-local-mongoose');
-const passport = require("passport");
+
 
 const signupFarmer = new mongoose.Schema({
     fullname:{
@@ -13,7 +12,6 @@ const signupFarmer = new mongoose.Schema({
     email:{
         type:String,
         required:true,
-        unique:true,
         trim:true
     },
     dor:{
@@ -84,5 +82,5 @@ const signupFarmer = new mongoose.Schema({
 signupFarmer.virtual('phoneNumber').get(function () {
     return this.countryCode + this.phone;
  })
-signupFarmer.plugin(passportLocalMongoose);
+
 module.exports = mongoose.model("Farmers",signupFarmer)
