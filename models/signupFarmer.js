@@ -57,8 +57,8 @@ const signupFarmer = new mongoose.Schema({
     },
     role:{
         type:String,
-        required:true,
-        trim:true
+       
+      
     },
     password:{
         type:String,

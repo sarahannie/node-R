@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const Port = 3000;
+const Port = 5000;
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const mongoose = require("mongoose");
@@ -62,16 +62,14 @@ const config = require("./config/database");
 //starting to add database
 
 //creating a connection between the controller and the database
-mongoose.connect(config.database, {
+mongoose.connect('mongodb+srv://sarahndianekwu:chibuzor@cluster0.drkv8ih.mongodb.net/?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 const db = mongoose.connection;
 
 //checking for the err in the mongodb
-db.on("error", (err) => {
-  console.log(err);
-});
+db.on('error', console.error.bind(console, 'connection error:'));
 
 // checking if database has connected
 db.once("open", () => {

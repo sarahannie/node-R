@@ -12,20 +12,40 @@ router.get('/signupconsumer', (req, res)=>{
 
 
 
-router.post("/signupconsumer", async(req,res)=>{
-    try{
+// router.post("/signupconsumer", async(req,res)=>{
+//     try{
+//         req.body.password = encryptPassword(req.body.password);
+//         const signup = Signup(req.body);
+//         const cart = Cart();
+//         cart.userId = signup.id;
+//         await signup.save()
+//         await cart.save()
+//         res.redirect("/signin")
+//     }catch(err){
+//         console.log(err)
+//         res.status(400).render("signup-consumer")
+//     }
+// })
+
+router.post("/signupconsumer", async(req,res) => {
+    try {
         req.body.password = encryptPassword(req.body.password);
-        const signup = Signup(req.body);
-        const cart = Cart();
-        cart.userId = signup.id;
-        await signup.save()
-        await cart.save()
-        res.redirect("/signin")
-    }catch(err){
-        console.log(err)
-        res.status(400).render("signup-consumer")
+        
+        // Create and save signup user
+        const signup = new Signup(req.body);
+        await signup.save();
+
+        // Create cart and attach signup user's id to it
+        const cart = new Cart();
+        cart.userId = signup._id;
+        await cart.save();
+
+        res.redirect("/signin");
+    } catch(err) {
+        console.log(err);
+        res.status(400).render("signup-consumer");
     }
-})
+});
 
 
 router.get("/registeredUser", async(req,res)=>{
