@@ -42,7 +42,7 @@ The primary goal of uFarm is to revolutionize the agricultural supply chain, ben
 
 To run uFarm locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/ufarm.git`
+1. Clone the repository: `git clone https://github.com/sarahannie/ufarm.git`
 2. Install dependencies: `npm install`
 3. Configure database settings and environment variables.
 4. Run the application: `npm start`
